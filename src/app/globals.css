@@ -16,6 +16,12 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "AppleSDGothicNeo";
+  src: url('./fonts/AppleSDGothicNeo.ttc');
+}
+
+
 /** Global CSS
   전역으로 적용시킬 CSS 
   layout.tsx 파일에서 적용시키면 됌
@@ -106,7 +112,6 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font-family: Monaco;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -157,7 +162,7 @@ body {
  /* 다크 모드*/
 .dark body {
   background-color: black;
-  color: #88ff69;
+  color: white;
 }
 
 a {
@@ -168,7 +173,3 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
-.dark {
-  background-color: black;
-  color: #88ff69;}
