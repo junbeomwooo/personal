@@ -15,7 +15,7 @@ export default function Main() {
       ) : (
         <>
           <Header />
-          <Background />
+          <Background  />
           
           </>
       )}

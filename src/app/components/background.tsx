@@ -11,7 +11,10 @@ import {
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
 
-export default function Background () {
+import { loadPolygonMaskPlugin } from "@tsparticles/plugin-polygon-mask"; // for polygon-mask
+// import { loadPolygonPath } from "@tsparticles/path-polygon"; // for path-polygon
+
+export default function Background() {
   const [init, setInit] = useState(false);
 
   // this should be run only once per application lifetime
@@ -22,8 +25,9 @@ export default function Background () {
       // starting from v2 you can add only the features you need reducing the bundle size
       //await loadAll(engine);
       //await loadFull(engine);
-      await loadSlim(engine);
       //await loadBasic(engine);
+      await loadSlim(engine);
+      await loadPolygonMaskPlugin(engine);
     }).then(() => {
       setInit(true);
     });
@@ -35,71 +39,93 @@ export default function Background () {
 
   const options: ISourceOptions = useMemo(
     () => ({
-      background: {
-        
-      },
-      fpsLimit: 120,
+      fpsLimit: 60,
       interactivity: {
         events: {
-          onClick: {
-            enable: true,
-            mode: "push",
-          },
           onHover: {
             enable: true,
-            mode: "repulse",
+            mode: "bubble",
           },
         },
         modes: {
-          push: {
-            quantity: 4,
-          },
-          repulse: {
-            distance: 200,
-            duration: 0.4,
+          bubble: {
+            distance: 40,
+            duration: 2,
+            opacity: 8,
+            size: 6,
+            speed: 3,
           },
         },
       },
       particles: {
         color: {
-          value: "#ffffff",
+          value: "#ff0000",
+          animation: {
+            enable: true,
+            speed: 20,
+            sync: true,
+          },
         },
         links: {
-          color: "#ffffff",
-          distance: 150,
+          blink: false,
+          color: "random",
+          consent: false,
+          distance: 30,
           enable: true,
-          opacity: 0.5,
-          width: 1,
+          opacity: 0.3,
+          width: 0.5,
         },
         move: {
-          direction: MoveDirection.none,
           enable: true,
-          outModes: {
-            default: OutMode.out,
-          },
-          random: false,
-          speed: 2,
-          straight: false,
+          outModes: "bounce",
+          speed: { min: 0.5, max: 1 },
         },
         number: {
-          density: {
-            enable: true,
-          },
-          value: 80,
+          value: 200,
         },
         opacity: {
-          value: 0.5,
+          animation: {
+            enable: true,
+            speed: 2,
+            sync: false,
+          },
+          random: false,
+          value: { min: 0.05, max: 1 },
         },
         shape: {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 5 },
+          animation: {
+            enable: false,
+            speed: 40,
+            sync: false,
+          },
+          random: true,
+          value: { min: 0.1, max: 1 },
         },
       },
-      detectRetina: true,
+      polygon: {
+        draw: {
+          enable: true,
+          stroke: {
+            color: "#fff",
+            width: 0.3,
+            opacity: 0.2,
+          },
+        },
+        move: {
+          radius: 10,
+        },
+        inline: {
+          arrangement: "equidistant",
+        },
+        scale: 0.5,
+        type: "inline",
+        url: "https://particles.js.org/images/google.svg",
+      },
     }),
-    [],
+    []
   );
 
   if (init) {
@@ -113,4 +139,4 @@ export default function Background () {
   }
 
   return <></>;
-};
+}
