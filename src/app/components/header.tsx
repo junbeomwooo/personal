@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
@@ -35,11 +35,11 @@ export default function Header() {
   };
 
   /** 현재 언어 locale 정보 */
-  const locale = window.location.pathname.substring(0, 3);
+  const locale = useLocale();
 
   return (
-    <>
-      <div className="flex justify-between items-center w-100vh mx-16 mt-12">
+    <div className="fixed w-full  mt-10">
+      <div className="flex justify-between items-center w-100vh mx-16">
         {/* 로고 */}
         <div>
           <motion.div
@@ -189,6 +189,6 @@ export default function Header() {
           </motion.div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
