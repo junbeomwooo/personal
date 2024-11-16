@@ -38,7 +38,7 @@ export default function Header() {
   const locale = useLocale();
 
   return (
-    <div className="fixed w-full  mt-10">
+    <div className="fixed w-full  mt-10 z-50">
       <div className="flex justify-between items-center w-100vh mx-16">
         {/* 로고 */}
         <div>

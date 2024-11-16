@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import * as THREE from "three";
-import FOG from "vanta/dist/vanta.fog.min";
+import CLOUDS from "vanta/dist/vanta.clouds.min";
 import { useTheme } from "next-themes";
 
 export default function Background() {
@@ -17,11 +17,11 @@ export default function Background() {
   }
 
   useEffect(() => {
-   /** 테마에 따라 색상 변경을 위해 조건문과 의존성 배열에서
-    * 1. !vanEffect를 제외하여 테마 변경시에만 업데이트된 색상이 렌더링되게함*/
-    if (window.THREE) {
+    /** 테마에 따라 색상 변경을 위해 조건문과 의존성 배열에서
+     * 1. !vanEffect를 제외하여 테마 변경시에만 업데이트된 색상이 렌더링되게함*/
+    if (!vantaEffect && window.THREE) {
       setVantaEffect(
-        FOG({
+        CLOUDS({
           THREE,
           el: myRef.current,
           mouseControls: true,
@@ -29,11 +29,8 @@ export default function Background() {
           gyroControls: false,
           minHeight: 200.0,
           minWidth: 200.0,
-          highlightColor: theme === "light" ? 0x6d7afc : 0x1b05,
-          midtoneColor: theme === "light" ? 0xffffff : 0xb9b9b9,
-          lowlightColor: theme === "light" ? 0xffffff : 0xf8f8ff,
-          baseColor: theme === "light" ? 0xf0f0f0 : 0x0,
-          blurFactor: 0.57,
+          skyColor: theme === "light" ? 0x81d6f7 : 0x0,
+          cloudColor: theme === "light" ? 0xc3d7f5 : 0x848893,
         })
       );
     }
