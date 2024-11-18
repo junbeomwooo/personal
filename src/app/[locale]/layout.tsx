@@ -5,6 +5,7 @@ import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import {NextIntlClientProvider} from 'next-intl';
+import CustomCursor from "../components/customCursor";
 
 export const metadata: Metadata = {
   title: "Junbeom Woo - Full Stack Developer",
@@ -37,6 +38,7 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <NextIntlClientProvider messages={messages}>
+            <CustomCursor />
             {children}
           </NextIntlClientProvider>
         </ThemeProvider>

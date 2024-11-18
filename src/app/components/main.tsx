@@ -23,7 +23,7 @@ export default function Main() {
             transition={{ duration: 1.5 }}
           >
             <Header />
-            {/* <MainContent /> */}
+            <MainContent />
             <Background />
           </motion.div>
         </>

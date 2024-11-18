@@ -157,6 +157,7 @@ body {
   background-color: white;
   color: black;
   font-size: 18px;
+  cursor: none; /* 기본 커서 숨김 */
 }
 
  /* 다크 모드*/
@@ -170,6 +171,60 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:hover,
+button:hover,
+input:hover  {
   text-decoration: underline;
+  cursor: none;
+}
+
+/* 커스텀 커서 스타일 */
+.cursor {
+  width: 22px;
+  height: 22px;
+  border: 2.5px solid black;
+  border-radius: 100%;
+  position: absolute;
+  pointer-events: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.dark .cursor {
+  border: 2.8px solid white;
+}
+
+/* hover 시의 배경색과 크기 변화 */
+.cursor:hover {
+  background-color: rgba(255, 255, 255, 0.5); 
+  transform: scale(2); /* hover 시 커서 크기 확대 */
+}
+
+/* `hovering` 클래스가 활성화되었을 때 스타일 */
+.cursor.hovering {
+  background-color: black;
+  transform: scale(2);
+  opacity: 60%;
+}
+
+.dark .cursor.hovering {
+  background-color: white;
+  transform: scale(2);
+  opacity: 60%;
+}
+
+/* 커서 클릭 애니메이션 */
+@keyframes cursorAnim {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.expand {
+  animation: cursorAnim 0.4s forwards;
 }
