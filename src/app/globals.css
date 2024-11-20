@@ -113,6 +113,7 @@ video {
   border: 0;
   font-size: 100%;
   vertical-align: baseline;
+  cursor: none; /* 기본 커서 숨김 */
 }
 /* HTML5 display-role reset for older browsers */
 article,

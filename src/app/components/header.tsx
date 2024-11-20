@@ -37,6 +37,8 @@ export default function Header() {
   /** 현재 언어 locale 정보 */
   const locale = useLocale();
 
+  console.log(locale);
+
   return (
     <div className="fixed w-full  mt-10 z-50">
       <div className="flex justify-between items-center w-100vh mx-16">
@@ -82,13 +84,13 @@ export default function Header() {
                 duration: 1.5,
               }}
             >
-              {locale === "/en" ? (
-                <button onClick={() => changeLan("da")}>
-                  DA
+              {locale === "en" ? (
+                <button onClick={() => changeLan("da")} className="p-4">
+                  <h1>DA</h1>
                 </button>
               ) : (
-                <button onClick={() => changeLan("en")}>
-                  EN
+                <button onClick={() => changeLan("en")} className="p-4">
+                  <h1>EN</h1>
                 </button>
               )}
             </motion.div>
@@ -111,7 +113,7 @@ export default function Header() {
               }}
             >
               <button
-                className="cursor-pointer w-24 flex justify-center"
+                className="cursor-pointer p-4 flex justify-center"
                 onClick={() => {
                   setTheme(currentTheme === "dark" ? "light" : "dark");
                 }}
@@ -159,7 +161,7 @@ export default function Header() {
             }}
             onAnimationComplete={() => setSecondAnimation(true)}
           >
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="pt-4 pb-4 pl-4">
               <AnimatePresence mode="wait" initial={false}>
                 {isMenuOpen ? (
                   // X 아이콘 (메뉴가 열렸을 때)
