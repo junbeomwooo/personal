@@ -23,7 +23,7 @@ export default function CustomCursor() {
     // `mouseenter`와 `mouseleave`로 hover 상태 추적
     const handleHover = (e: MouseEvent) => {
       if (e.target instanceof HTMLElement) {
-        if (e.target.matches("a, button, input")) {
+        if (e.target.matches(".hoverable")) {
           setIsHovering(true); // 해당 요소에 마우스가 올라오면 hover 상태로 설정
         } else {
           setIsHovering(false); // 아니면 hover 상태 해제

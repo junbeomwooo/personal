@@ -37,11 +37,10 @@ export default function Header() {
   /** 현재 언어 locale 정보 */
   const locale = useLocale();
 
-  console.log(locale);
 
   return (
     <div className="fixed w-full  mt-10 z-50">
-      <div className="flex justify-between items-center w-100vh mx-16">
+      <div className="flex justify-between items-center w-100vh mx-20">
         {/* 로고 */}
         <div>
           <motion.div
@@ -59,15 +58,14 @@ export default function Header() {
             }}
             onAnimationComplete={() => setSecondAnimation(true)}
           >
-            <div className="font-apple">
-              <h3 className="text-base">Import</h3>
-              <h1 className="text-3xl">&gt;JUN</h1>
-            </div>
+            <button className="font-apple hover:no-underline hoverable py-4 pr-4" onClick={()=> router.push("/")}>
+              <h1 className="text-xl hoverable font-bold">JUNBEOM WOO</h1>
+            </button>
           </motion.div>
         </div>
 
         {/* 각종메뉴들 */}
-        <div className="flex items-center">
+        <div className="flex items-center ">
           {/* 언어 변경 */}
           {secondAnimation && (
             <motion.div
@@ -85,12 +83,12 @@ export default function Header() {
               }}
             >
               {locale === "en" ? (
-                <button onClick={() => changeLan("da")} className="p-4">
-                  <h1>DA</h1>
+                <button onClick={() => changeLan("da")} className="p-4 hoverable">
+                  <h1 className="hoverable">DA</h1>
                 </button>
               ) : (
-                <button onClick={() => changeLan("en")} className="p-4">
-                  <h1>EN</h1>
+                <button onClick={() => changeLan("en")} className="p-4 hoverable">
+                  <h1 className="hoverable">EN</h1>
                 </button>
               )}
             </motion.div>
@@ -113,7 +111,7 @@ export default function Header() {
               }}
             >
               <button
-                className="cursor-pointer p-4 flex justify-center"
+                className="p-4 flex justify-center hoverable"
                 onClick={() => {
                   setTheme(currentTheme === "dark" ? "light" : "dark");
                 }}
@@ -127,7 +125,7 @@ export default function Header() {
                       exit={{ opacity: 0, rotate: -45 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <LuSunMedium className="w-6 h-6" />
+                      <LuSunMedium className="w-6 h-6 hoverable" />
                     </motion.div>
                   ) : (
                     <motion.div
@@ -137,7 +135,7 @@ export default function Header() {
                       exit={{ opacity: 0, rotate: 45 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <FaRegMoon className="w-5 h-5" />
+                      <FaRegMoon className="w-5 h-5 hoverable" />
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -161,7 +159,7 @@ export default function Header() {
             }}
             onAnimationComplete={() => setSecondAnimation(true)}
           >
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="pt-4 pb-4 pl-4">
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="pt-4 pb-4 pl-4 hoverable">
               <AnimatePresence mode="wait" initial={false}>
                 {isMenuOpen ? (
                   // X 아이콘 (메뉴가 열렸을 때)
@@ -172,7 +170,7 @@ export default function Header() {
                     exit={{ opacity: 0, rotate: -45 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <IoClose className="w-12 h-12" />
+                    <IoClose className="w-12 h-12 hoverable" />
                   </motion.div>
                 ) : (
                   // 햄버거 아이콘 (메뉴가 닫혔을 때)
@@ -183,7 +181,7 @@ export default function Header() {
                     exit={{ opacity: 0, rotate: 45 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <BiCategory className="w-12 h-12" />
+                    <BiCategory className="w-12 h-12 hoverable" />
                   </motion.div>
                 )}
               </AnimatePresence>

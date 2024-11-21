@@ -188,6 +188,7 @@ input:hover  {
   position: absolute;
   pointer-events: none;
   transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 99;
 }
 
 .dark .cursor {
@@ -203,13 +204,13 @@ input:hover  {
 /* `hovering` 클래스가 활성화되었을 때 스타일 */
 .cursor.hovering {
   background-color: black;
-  transform: scale(2);
+  transform: scale(3);
   opacity: 60%;
 }
 
 .dark .cursor.hovering {
   background-color: white;
-  transform: scale(2);
+  transform: scale(3);
   opacity: 60%;
 }
 

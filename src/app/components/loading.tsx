@@ -24,7 +24,7 @@ export default function Loading({ setLoading }: LoadingProps) {
 
   return (
     <div
-      className="w-100vh h-full mt-10 mx-20 font-monaco text-xl max-xl:text-sm max-xl:mx-10 dark:text-[#88ff69]" 
+      className="w-full h-full pt-10 px-20 font-monaco text-xl max-xl:text-sm max-xl:px-10 dark:text-[#88ff69] z-50 absolute bg-white dark:bg-black"
     >
       {/* 로딩바의 첫번째 화면 */}
       {!secondScreen && (
