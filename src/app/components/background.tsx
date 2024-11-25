@@ -58,7 +58,6 @@ const suzi = import('@pmndrs/assets/models/bunny.glb')
 
 function Bun(props) {
   const { nodes } = useGLTF(suspend(suzi).default)
-  console.log(nodes)
   return (
     <mesh receiveShadow castShadow geometry={nodes.mesh.geometry} {...props}>
       <meshStandardMaterial color="#222" roughness={0.5} />
@@ -80,17 +79,17 @@ export default function Background() {
   const { theme } = useTheme();
   
   return (
-    <div className='w-full h-full '>
+    <div className='w-full h-full'>
     <Canvas shadows dpr={[1, 1.5]} camera={{ position: [-1.5, 1, 5.5], fov: 45, near: 1, far: 20 }} eventPrefix="client"   style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex:0}}>
-      {/* Lights e2c291 */} 
-      <color attach="background" args={[`${theme === 'light'? "#e2c291" : "black"}`]} />
-      <hemisphereLight intensity={theme === 'light' ? 1 : 0.15} groundColor={"black"} />
+      <color attach="background" args={[`${theme === 'light'? "#f0d7b2" : "black"}`]} />
+      {/* 모니터 밝기 */}
+      <hemisphereLight intensity={theme === 'light' ?  8 : 0.15} groundColor={"black"} />
       <spotLight decay={0} position={[10, 20, 10]} angle={0.12} penumbra={1} intensity={3} castShadow shadow-mapSize={1024} />
       {/* Main scene */}
       <group position={[-0, -1, 0]}>
         {/* Auto-instanced sketchfab model */}
         <Instances>
-          <Computers scale={0.5} />
+          <Computers scale={0.6} />
         </Instances>
 
         {/* Plane reflections + distance blur */}
@@ -112,11 +111,12 @@ export default function Background() {
         </mesh>
         {/* Bunny and a light give it more realism */}
         <Bun scale={0.4} position={[0, 0.3, 0.5]} rotation={[0, -Math.PI * 0.85, 0]} />
-        <pointLight distance={1.5} intensity={1} position={[-0.15, 0.7, 0]} color="orange" />
+        <pointLight distance={1.5} intensity={1} position={[-0.15, 0.7, 0]} color={theme === "light" ? "#4bf9ff": "orange"} />
       </group>
       {/* Postprocessing */}
       <EffectComposer enableNormalPass={false}>
-        <Bloom luminanceThreshold={0} mipmapBlur luminanceSmoothing={0.0} intensity={5} />
+        {/* 백그라운드 빛 번짐 */}
+        <Bloom luminanceThreshold={0} mipmapBlur luminanceSmoothing={0.0} intensity={theme === "light" ? 4 : 5} />
         <DepthOfField target={[0, 0, 13]} focalLength={0.3} bokehScale={15} height={700} />
       </EffectComposer>
       {/* Camera movements */}

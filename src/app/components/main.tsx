@@ -9,7 +9,7 @@ import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 export default function Main() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   return (
     <>

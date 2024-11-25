@@ -1,6 +1,5 @@
 {
-    "HomePage": {
-      "title": "Hello Danish",
-      "about": "Go to the about page"
-    }
+  "HomePage": {
+    "smallTitle": "Stræber efter at blive en dygtig Fullstack Udvikler"
+  }
   }
