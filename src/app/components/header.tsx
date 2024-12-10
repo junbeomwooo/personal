@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { useState } from "react";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,8 +12,6 @@ import { IoClose } from "react-icons/io5";
 import { FaRegMoon } from "react-icons/fa";
 
 export default function Header() {
-
-  const t = useTranslations("HomePage");
 
   const router = useRouter();
 

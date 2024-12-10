@@ -3,13 +3,12 @@
 
 import { Canvas, useFrame } from '@react-three/fiber'
 import { useGLTF, MeshReflectorMaterial, BakeShadows } from '@react-three/drei'
-import { EffectComposer, Bloom, DepthOfField, ToneMapping } from '@react-three/postprocessing'
+import { EffectComposer, Bloom, DepthOfField } from '@react-three/postprocessing'
 import { easing } from 'maath'
 import { suspend } from 'suspend-react'
-import { Instances, Computers } from './Computers'
+import { Instances, Computers } from './Computers.js'
 import { useTheme } from 'next-themes';
-import { motion } from "framer-motion";
-import { useState, useEffect } from 'react';
+
 
 const suzi = import('@pmndrs/assets/models/bunny.glb')
 
@@ -41,7 +40,8 @@ export default function Background() {
     <Canvas shadows dpr={[1, 1.5]} camera={{ position: [-1.5, 1, 5.5], fov: 45, near: 1, far: 20 }} eventPrefix="client"   style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex:0}}>
       <color attach="background" args={[`${theme === 'light'? "#f0d7b2" : "black"}`]} />
       {/* 모니터 밝기 */}
-      <hemisphereLight intensity={theme === 'light' ? 6 : 0.15} groundColor={"black"} />
+      <hemisphereLight intensity={theme === 'light' ? 7 : 0.15} groundColor={"black"} />
+
       {/* 바닥 밝기 */}
       <spotLight decay={0} position={[10, 20, 10]} angle={0.12} penumbra={1} intensity={3} castShadow shadow-mapSize={1024} />
       {/* Main scene */}
