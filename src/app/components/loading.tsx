@@ -121,8 +121,8 @@ export default function Loading({ setLoading }: LoadingProps) {
         </div>
       )}
 
-      <div className="absolute right-0 text-base cursor-pointer mr-20 bottom-0 mb-20 max-xl:mr-10 max-xl:text-sm max-xl:mb-10">
-        <button className="hover:underline" onClick={() => setLoading(false)}>
+      <div className="absolute right-0 text-base cursor-pointer mr-20 bottom-0 mb-20 max-xl:mr-10 max-xl:text-sm max-xl:mb-10 hoverable">
+        <button className="hover:underline hoverable" onClick={() => setLoading(false)}>
           Skip intro{" "}
         </button>
       </div>
