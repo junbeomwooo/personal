@@ -1,47 +1,5 @@
 "use client";
 
-// import React, { useState, useEffect, useRef } from "react";
-// import * as THREE from "three";
-// import RINGS from "vanta/dist/vanta.rings.min";
-// import { useTheme } from "next-themes";
-
-// export default function Background() {
-//   const [vantaEffect, setVantaEffect] = useState<any>(null);
-
-//   const myRef = useRef(null);
-
-//   const { theme } = useTheme();
-
-//   if (typeof window !== "undefined") {
-//     window.THREE = THREE;
-//   }
-
-//   useEffect(() => {
-//     /** 테마에 따라 색상 변경을 위해 조건문과 의존성 배열에서
-//      * 1. !vanEffect를 제외하여 테마 변경시에만 업데이트된 색상이 렌더링되게함*/
-//     if ( window.THREE) {
-//       setVantaEffect(
-//         RINGS({
-//           THREE,
-//           el: myRef.current,
-//           mouseControls: true,
-//           touchControls: true,
-//           gyroControls: false,
-//           minHeight: 200.00,
-//           minWidth: 200.00,
-//           scale: 1.00,
-//           scaleMobile: 1.00,
-//           backgroundColor: theme === "light" ? 0xffffff:0x0
-//         })
-//       );
-//     }
-//     return () => {
-//       if (vantaEffect) vantaEffect.destroy();
-//     };
-//   }, [theme]);
-
-//   return <div ref={myRef} className="w-full h-full absolute -z-50 opacity-80" />;
-// }
 
 import { Canvas, useFrame } from '@react-three/fiber'
 import { useGLTF, MeshReflectorMaterial, BakeShadows } from '@react-three/drei'
@@ -83,7 +41,8 @@ export default function Background() {
     <Canvas shadows dpr={[1, 1.5]} camera={{ position: [-1.5, 1, 5.5], fov: 45, near: 1, far: 20 }} eventPrefix="client"   style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex:0}}>
       <color attach="background" args={[`${theme === 'light'? "#f0d7b2" : "black"}`]} />
       {/* 모니터 밝기 */}
-      <hemisphereLight intensity={theme === 'light' ?  8 : 0.15} groundColor={"black"} />
+      <hemisphereLight intensity={theme === 'light' ? 6 : 0.15} groundColor={"black"} />
+      {/* 바닥 밝기 */}
       <spotLight decay={0} position={[10, 20, 10]} angle={0.12} penumbra={1} intensity={3} castShadow shadow-mapSize={1024} />
       {/* Main scene */}
       <group position={[-0, -1, 0]}>

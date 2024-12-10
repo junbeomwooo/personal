@@ -40,7 +40,7 @@ export default function Header() {
 
   return (
     <div className="fixed w-full  mt-10 z-50">
-      <div className="flex justify-between items-center w-100vh mx-20">
+      <div className="flex justify-between items-center w-100vh mx-6 md:mx-10 lg:mx-20 ">
         {/* 로고 */}
         <div>
           <motion.div
@@ -58,8 +58,8 @@ export default function Header() {
             }}
             onAnimationComplete={() => setSecondAnimation(true)}
           >
-            <button className="font-apple hover:no-underline hoverable py-4 pr-4" onClick={()=> router.push("/")}>
-              <h1 className="text-xl hoverable font-bold">JUNBEOM WOO</h1>
+            <button className="font-apple hover:no-underline hoverable" onClick={()=> router.push("/")}>
+              <h1 className="text-lg sm:text-xl hoverable font-bold">JUNBEOM WOO</h1>
             </button>
           </motion.div>
         </div>
@@ -83,12 +83,12 @@ export default function Header() {
               }}
             >
               {locale === "en" ? (
-                <button onClick={() => changeLan("da")} className="p-4 hoverable">
-                  <h1 className="hoverable">DA</h1>
+                <button onClick={() => changeLan("da")} className="p-3 sm:p-4 hoverable">
+                  <h1 className="hoverable text-base">DA</h1>
                 </button>
               ) : (
-                <button onClick={() => changeLan("en")} className="p-4 hoverable">
-                  <h1 className="hoverable">EN</h1>
+                <button onClick={() => changeLan("en")} className="p-3 sm:p-4 hoverable">
+                  <h1 className="hoverable text-base">EN</h1>
                 </button>
               )}
             </motion.div>
@@ -111,7 +111,7 @@ export default function Header() {
               }}
             >
               <button
-                className="p-4 flex justify-center hoverable"
+                className="p-3 sm:p-4 flex justify-center hoverable"
                 onClick={() => {
                   setTheme(currentTheme === "dark" ? "light" : "dark");
                 }}
@@ -125,7 +125,7 @@ export default function Header() {
                       exit={{ opacity: 0, rotate: -45 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <LuSunMedium className="w-6 h-6 hoverable" />
+                      <LuSunMedium className="w-5 h-5 sm:w-6 sm:h-6 hoverable" />
                     </motion.div>
                   ) : (
                     <motion.div
@@ -159,7 +159,7 @@ export default function Header() {
             }}
             onAnimationComplete={() => setSecondAnimation(true)}
           >
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="pt-4 pb-4 pl-4 hoverable">
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="pt-4 pb-4 pl-3 sm:pl-4 hoverable">
               <AnimatePresence mode="wait" initial={false}>
                 {isMenuOpen ? (
                   // X 아이콘 (메뉴가 열렸을 때)
@@ -170,7 +170,7 @@ export default function Header() {
                     exit={{ opacity: 0, rotate: -45 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <IoClose className="w-12 h-12 hoverable" />
+                    <IoClose className="w-10 h-10 sm:w-12 sm:h-12 hoverable" />
                   </motion.div>
                 ) : (
                   // 햄버거 아이콘 (메뉴가 닫혔을 때)
@@ -181,7 +181,7 @@ export default function Header() {
                     exit={{ opacity: 0, rotate: 45 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <BiCategory className="w-12 h-12 hoverable" />
+                    <BiCategory className="w-10 h-10 sm:w-12 sm:h-12 hoverable" />
                   </motion.div>
                 )}
               </AnimatePresence>

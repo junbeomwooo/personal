@@ -5,7 +5,6 @@ import Header from "./header";
 import Background from "./background";
 import MainContent from "./mainContent";
 
-import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 export default function Main() {
