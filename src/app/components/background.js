@@ -9,6 +9,23 @@ import { suspend } from 'suspend-react'
 import { Instances, Computers } from './Computers.js'
 import { useTheme } from 'next-themes';
 
+/*
+ * Modified by Junbeom woo
+ * Original Software: React Fiber Example
+ * Copyright (c) 2020 Paul Henschel
+ * 
+ * MIT License
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ */
+
 
 const suzi = import('@pmndrs/assets/models/bunny.glb')
 

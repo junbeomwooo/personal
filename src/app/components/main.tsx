@@ -1,28 +1,26 @@
 "use client";
 
 import Loading from "./loading";
-import Header from "./header";
 import Background from "./background";
 import MainContent from "./mainContent";
 
 import { useState } from "react";
 
+
+
 export default function Main() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   return (
-    <>
-        <Background />
-
-        {loading ? (
-
-            <Loading setLoading={setLoading} />
-        ) : (
-          <>
-            <Header />
-            <MainContent />
-          </>
-        )}
-    </>
+    <div>
+      {loading ? (
+        <Loading setLoading={setLoading} />
+      ) : (
+        <>
+          <Background />
+          <MainContent />
+        </>
+      )}
+    </div>
   );
 }

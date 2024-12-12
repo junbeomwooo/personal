@@ -170,7 +170,7 @@ export default function Header() {
             }}
             onAnimationComplete={() => setSecondAnimation(true)}
           >
-            <button
+            <div
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="pt-4 pb-4 pl-3 sm:pl-4 hoverable"
             >
@@ -203,7 +203,7 @@ export default function Header() {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </button>
+            </div>
           </motion.div>
         </div>
       </div>
