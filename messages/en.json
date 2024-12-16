@@ -1,5 +1,10 @@
 {
     "HomePage": {
-      "smallTitle": "Aiming to be a skilled Full Stack Developer"
+      "smallTitle": "Aiming to be a skilled Full Stack Developer",
+      "home":"home",
+      "about":"about",
+      "portfolio":"portfolio",
+      "resume":"resume",
+      "contact":"contact"
     }
   }

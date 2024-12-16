@@ -23,6 +23,7 @@ export default function Loading({ setLoading }: LoadingProps) {
   const [showExcute3, setShowExcute3] = useState(false);
 
   return (
+    <div className=" max-w-[1921px] m-auto" >
     <div
       className="w-full h-full pt-10 px-20 font-monaco text-xl max-xl:text-sm max-xl:px-10 dark:text-[#88ff69] z-50 absolute bg-white dark:bg-black"
     >
@@ -126,6 +127,7 @@ export default function Loading({ setLoading }: LoadingProps) {
           Skip intro{" "}
         </button>
       </div>
+    </div>
     </div>
   );
 }

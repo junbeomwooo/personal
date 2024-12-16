@@ -53,7 +53,7 @@ export default function Background() {
   const { theme } = useTheme();
   
   return (
-    <div className='w-full h-full'>
+    <div className='w-full h-full max-w-[1921px]'>
     <Canvas shadows dpr={[1, 1.5]} camera={{ position: [-1.5, 1, 5.5], fov: 45, near: 1, far: 20 }} eventPrefix="client"   style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex:0}}>
       <color attach="background" args={[`${theme === 'light'? "#f0d7b2" : "black"}`]} />
       {/* 모니터 밝기 */}

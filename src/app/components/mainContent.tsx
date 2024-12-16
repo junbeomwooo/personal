@@ -8,8 +8,6 @@ export default function MainContent() {
 
   const locale = useLocale();
 
-  console.log(locale);
-
   
   return (
 

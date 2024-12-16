@@ -1,5 +1,10 @@
 {
   "HomePage": {
-    "smallTitle": "Stræber efter at blive en dygtig Fullstack Udvikler"
+    "smallTitle": "Stræber efter at blive en dygtig Fullstack Udvikler",
+    "home": "hjem",
+    "about": "om",
+    "portfolio": "portefølje",
+    "resume": "CV",
+    "contact": "kontakt"
   }
   }

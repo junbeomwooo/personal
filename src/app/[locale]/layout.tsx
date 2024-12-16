@@ -4,9 +4,9 @@ import { ThemeProvider } from "../components/theme-provider";
 import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import {NextIntlClientProvider} from 'next-intl';
+import { NextIntlClientProvider } from "next-intl";
+import ClientLayout from "./clientLayout";
 import CustomCursor from "../components/customCursor";
-import Header from "../components/header";
 
 export const metadata: Metadata = {
   title: "Junbeom Woo - Full Stack Developer",
@@ -21,7 +21,7 @@ export default async function RootLayout({
   params: { locale: string };
 }>) {
   // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as 'en' | 'da')) {
+  if (!routing.locales.includes(locale as "en" | "da")) {
     notFound();
   }
 
@@ -39,9 +39,8 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <NextIntlClientProvider messages={messages}>
-            <CustomCursor />
-            <Header/>
-            {children}
+            <CustomCursor/>
+            <ClientLayout>{children}</ClientLayout>
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
