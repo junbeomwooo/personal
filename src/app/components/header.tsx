@@ -231,10 +231,10 @@ export default function Header() {
               initial={{ y: "-100%" }}
               animate={{ y: "0%" }}
               exit={{ y: "-100%" }}
-              transition={{ duration: 0.1, ease: "linear" }}
+              transition={{ duration: 0.2, ease: "linear" }}
             />
-
-            <div className="flex items-center justify-center w-full mt-[350px] gap-10 max-sm:gap-4">
+            <div className="absolute pt-24 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+            <div className="flex items-center justify-center w-full gap-10 max-sm:gap-4">
               {/* home */}
               <motion.div
                 className={`w-[190px] h-[190px] border-4 border-solid border-[#ffffff] z-30 relative text-center hoverable max-sm:w-[100px] max-sm:h-[100px] max-sm:border-4 ${
@@ -427,6 +427,7 @@ export default function Header() {
                   )}
                 </div>
               </motion.div>
+            </div>
             </div>
           </div>
         )}

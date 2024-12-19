@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "../globals.css";
+import "../styles/globals.css";
 import { ThemeProvider } from "../components/theme-provider";
 import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
