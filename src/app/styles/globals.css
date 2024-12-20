@@ -238,6 +238,28 @@ a {
   opacity: 60%;
 }
 
+/* `magnifying` 클래스가 활성화되었을 때 스타일 */
+.cursor.magnifying {
+  background-color: black;
+  transform: scale(8);
+  opacity: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dark .cursor.magnifying {
+  background-color: white;
+  transform: scale(8);
+  opacity: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
 /* 커서 클릭 애니메이션 */
 @keyframes cursorAnim {
   0% {
