@@ -5,6 +5,12 @@
     "about": "om",
     "portfolio": "portefølje",
     "resume": "CV",
-    "contact": "kontakt"
+    "contact": "kontakt",
+
+    "whoAmI":"HvemErJeg",
+    "skills":"Færdigheder",
+    "education": "Uddannelse",
+
+    "hoverMe": "Peg på mig!"
   }
-  }
+}

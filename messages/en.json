@@ -5,6 +5,12 @@
       "about":"about",
       "portfolio":"portfolio",
       "resume":"resume",
-      "contact":"contact"
+      "contact":"contact",
+
+      "whoAmI":"WhoAmI",
+      "skills":"Skills",
+      "education": "Education",
+
+      "hoverMe":"Hover me!"
     }
   }
