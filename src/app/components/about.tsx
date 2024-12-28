@@ -12,6 +12,7 @@ import { useTranslations } from "next-intl";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "../styles/globals.css";
 
 // import required modules
 import { Mousewheel, Pagination } from "swiper/modules";
@@ -37,7 +38,6 @@ export default function About() {
   const [thirdSlideAnimation, setThirdSlideAnimation] = useState(false);
 
   const handleSlideChange = (e: SwiperType) => {
-    console.log(e.activeIndex);
     if (e.activeIndex === 1) {
       setSecondSlideAnimation(true);
     } else if (e.activeIndex === 2) {
@@ -61,6 +61,8 @@ export default function About() {
           }}
           pagination={{
             clickable: true,
+            renderBullet: (index, className) =>
+              `<span class="${className}"></span>`,
           }}
           loop={false}
           modules={[Mousewheel, Pagination]}
@@ -501,25 +503,25 @@ export default function About() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: thirdSlideAnimation ? 1 : 0 }}
                   transition={{ duration: 1, ease: "linear" }}
-                  className="py-6 xl:max-w-[900px]"
+                  className="py-6 xl:py-10 xl:max-w-[900px]"
                 >
                   {/* first euducation */}
                   <div>
-                    <h1 className="text-[13px] sm:text-[15px] md:text-[18px] xl:text-[20px] font-medium leading-[18px]">
+                    <h1 className="text-[14px] sm:text-[17px] md:text-[20px] xl:text-[22px] font-medium leading-[18px]">
                       {locale === "en"
                         ? "Ezen Academy, Full Stack (JavaScript) Web Developer (FrontEnd & BackEnd)"
                         : "Ezen Academy, Full Stack (JavaScript) Webudvikler (Frontend & Backend)"}
                     </h1>
-                    <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-4  text-[#888888] dark:text-[#b4b4b4]">
+                    <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-4 xl:mt-5  text-[#888888] dark:text-[#b4b4b4]">
                       {locale === "en"
                         ? "August 2022 - January - 2023 (920hr / 115days)"
                         : "August 2022 - Januar 2023 (920 timer / 115 dage)"}
                     </h2>
                     {/* courses */}
                     <div>
-                      <div className="text-[10px] sm:text-[12px] md:text-[15px] xl:text-[17px] mt-4">
+                      <div className="text-[9.5px] sm:text-[11px] md:text-[14px] xl:text-[16px] mt-4 xl:mt-5 ml-4">
                         {locale === "en" ? (
-                          <div className="flex flex-wrap gap-2 font-light">
+                          <div className="flex flex-wrap gap-3 font-light">
                             <h4>· Front End Programming</h4>
                             <h4>· Server Programming</h4>
                             <h4>· JavaScript Programming</h4>
@@ -529,7 +531,7 @@ export default function About() {
                             <h4>· Applied Programming</h4>
                           </div>
                         ) : (
-                          <div className="flex flex-wrap gap-2 font-light">
+                          <div className="flex flex-wrap gap-3 font-light">
                             <h4>· Frontend Programmering</h4>
                             <h4>· Server Programmering</h4>
                             <h4>· JavaScript Programmering</h4>
@@ -545,21 +547,21 @@ export default function About() {
 
                   {/* second euducation */}
                   <div className="mt-14">
-                    <h1 className="text-[13px] sm:text-[15px] md:text-[18px] xl:text-[20px]  font-medium leading-[18px]">
+                    <h1 className="text-[14px] sm:text-[17px] md:text-[20px] xl:text-[22px]  font-medium leading-[18px]">
                       {locale === "en"
                         ? "Bachelor of Visual Design, Jangan University, South Korea"
                         : "Bachelor i Visuel Design, Jangan Universitet, Sydkorea"}
                     </h1>
-                    <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-4 text-[#888888] dark:text-[#b4b4b4]">
+                    <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-4 xl:mt-5 text-[#888888] dark:text-[#b4b4b4]">
                       {locale === "en"
                         ? "March 2016 - February 2022"
                         : "Marts 2016 - Februar 2022"}
                     </h2>
                     {/* courses */}
                     <div>
-                      <div className="text-[10px] sm:text-[12px] md:text-[15px] xl:text-[17px] mt-4">
+                      <div className="text-[9.5px] sm:text-[11px] md:text-[14px] xl:text-[16px] mt-4 xl:mt-5 ml-4">
                         {locale === "en" ? (
-                          <div className="flex flex-wrap gap-2  font-light">
+                          <div className="flex flex-wrap gap-3  font-light">
                             <h4>· Web Design</h4>
                             <h4>· Advertisement Design</h4>
                             <h4>· Brand Design</h4>
@@ -570,7 +572,7 @@ export default function About() {
                             <h4>· 3D Studio Design</h4>
                           </div>
                         ) : (
-                          <div className="flex flex-wrap gap-2  font-light">
+                          <div className="flex flex-wrap gap-3  font-light">
                             <h4>· Webdesign</h4>
                             <h4>· Reklame Design</h4>
                             <h4>· Brand Design</h4>
@@ -587,7 +589,7 @@ export default function About() {
                 </motion.div>
 
                 <motion.h1
-                  className="text-[20px] sm:text-[28px] md:text-[30px] text-orange-500 dark:text-[#88ff69] font-monaco font-bold xl:text-[40px] mt-6"
+                  className="text-[20px] sm:text-[28px] md:text-[30px] text-orange-500 dark:text-[#88ff69] font-monaco font-bold xl:text-[40px]"
                   initial={{ opacity: 0, y: "-35%" }}
                   animate={{
                     opacity: thirdSlideAnimation ? 1 : 0,

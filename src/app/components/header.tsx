@@ -311,10 +311,10 @@ export default function Header() {
                   )}
                 </div>
               </motion.div>
-              {/* portfolio */}
+              {/* project */}
               <motion.div
                 className={`w-[190px] h-[190px] border-4 border-solid border-[#ffffff] z-30 relative text-center hoverable max-sm:w-[100px] max-sm:h-[100px] max-sm:border-4 ${
-                  pathname === "/en/portfolio" || pathname === "/da/portfolio"
+                  pathname === "/en/project" || pathname === "/da/project"
                     ? "bg-[#F97316] dark:bg-[#00ce59] border-none"
                     : ""
                 }`}
@@ -329,21 +329,21 @@ export default function Header() {
                   transition: { duration: 0.2, ease: "linear" },
                 }}
                 onClick={() => {
-                  router.push(`/${locale}/portfolio`);
+                  router.push(`/${locale}/project`);
                   setIsMenuOpen(false);
                 }}
               >
                 <div className="mt-[53px] hoverable max-sm:mt-[0px]">
-                  {pathname === "/en/portfolio" || pathname === "/da/portfolio" ? (
+                  {pathname === "/en/project" || pathname === "/da/project" ? (
                     <FaCode className="w-[90px] h-[90px] m-auto max-sm:w-[50px] max-sm:mt-[5px]" />
                   ) : (
                     <>
                       {" "}
                       <h3 className="text-[55px] font-bold hoverable max-sm:text-[30px] max-sm:mt-[25px]">
-                        Po
+                        Pr
                       </h3>
                       <h5 className="text-[22px] hoverable max-sm:text-[15px]">
-                        {h("portfolio")}
+                        {h("project")}
                       </h5>
                     </>
                   )}
