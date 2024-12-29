@@ -257,6 +257,9 @@ a {
   align-items: center;
 }
 
+
+/* Swiper.js : Pagenation */
+
 @media (max-width: 769px) {
   .swiper-pagination {
     width: 100%;
@@ -299,17 +302,36 @@ a {
   background-color: white;  /* 활성화된 버튼의 색상을 변경 */
 }
 
+
+/* Swiper.js : Navigation */
+
 .swiper-button-next,
 .swiper-button-prev {
-  color: #F87315 !important;
+  color: black !important;
   font-weight: 900 !important;
   cursor: none !important;
 }
 
 .dark .swiper-button-next,
 .dark .swiper-button-prev {
-  color: #88FF69 !important;
+  color: white !important;
 }
+
+
+@media (max-width: 600px) {
+  .swiper-button-next{
+    scale: 65% !important;
+    position: absolute !important;
+    right: 0 !important;
+  }
+  .swiper-button-prev {
+    scale: 65% !important;
+    position: absolute !important;
+    left:0 !important;
+  }
+}
+
+
 
 /* 커서 클릭 애니메이션 */
 @keyframes cursorAnim {
