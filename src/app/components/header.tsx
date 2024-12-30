@@ -49,7 +49,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="fixed w-full mt-8 z-30 max-w-[1921px]">
+      <div className="fixed w-full mt-4 sm:mt-8 z-30 max-w-[1921px]">
         <div className="flex justify-between items-center w-100vh mx-6 md:mx-10 lg:mx-20 ">
           {/* 로고 */}
           <div>
@@ -100,14 +100,14 @@ export default function Header() {
                 {locale === "en" ? (
                   <button
                     onClick={() => changeLan("da")}
-                    className="p-3 sm:p-4 hoverable"
+                    className="p-1 sm:p-4 hoverable"
                   >
                     <h1 className="hoverable text-base">DA</h1>
                   </button>
                 ) : (
                   <button
                     onClick={() => changeLan("en")}
-                    className="p-3 sm:p-4 hoverable"
+                    className="p-1 sm:p-4 hoverable"
                   >
                     <h1 className="hoverable text-base">EN</h1>
                   </button>
@@ -132,7 +132,7 @@ export default function Header() {
                 }}
               >
                 <button
-                  className="p-3 sm:p-4 flex justify-center hoverable w-[55px]"
+                  className="p-1 sm:p-4 flex justify-center hoverable w-[48px] sm:w-[55px]"
                   onClick={() => {
                     setTheme(currentTheme === "dark" ? "light" : "dark");
                   }}
@@ -186,7 +186,7 @@ export default function Header() {
             >
               <div
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="pt-4 pb-4 pl-3 sm:pl-4 hoverable"
+                className="pt-4 pb-4 pl-1 sm:pl-4 hoverable"
               >
                 <AnimatePresence mode="wait" initial={false}>
                   {isMenuOpen ? (
@@ -199,7 +199,7 @@ export default function Header() {
                       transition={{ duration: 0.3 }}
                     >
                       <button className="hoverable">
-                        <IoClose className="w-10 h-10 sm:w-12 sm:h-12 hoverable" />
+                        <IoClose className="w-9 h-9 sm:w-12 sm:h-12 hoverable" />
                       </button>
                     </motion.div>
                   ) : (
@@ -212,7 +212,7 @@ export default function Header() {
                       transition={{ duration: 0.3 }}
                     >
                       <button className="hoverable">
-                        <BiCategory className="w-10 h-10 sm:w-12 sm:h-12 hoverable" />
+                        <BiCategory className="w-9 h-9 sm:w-12 sm:h-12 hoverable" />
                       </button>
                     </motion.div>
                   )}

@@ -54,11 +54,12 @@ export default function About() {
           direction={"vertical"}
           slidesPerView={1}
           spaceBetween={0}
-          mousewheel={{
-            forceToAxis: true, // 수직 방향으로만 반응
-            thresholdDelta: 5, // 스크롤 양이 50 이상일 때만 넘어감
-            thresholdTime: 500, // 최소 500ms 간격으로만 반응
-          }}
+          // mousewheel={{
+          //   forceToAxis: true, // 수직 방향으로만 반응
+          //   thresholdDelta: 5, // 스크롤 양이 50 이상일 때만 넘어감
+          //   thresholdTime: 500, // 최소 500ms 간격으로만 반응
+          // }}
+          mousewheel={true}
           pagination={{
             clickable: true,
             renderBullet: (index, className) =>

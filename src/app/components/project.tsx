@@ -20,7 +20,7 @@ export default function Project() {
   return (
     <AnimatePresence>
       {/* Container */}
-      <div className="w-full h-screen flex px-6 md:px-10 lg:px-40 xl:px-20 2xl:px-40 items-center pt-[45px]">
+      <div className="w-full h-screen flex px-6 md:px-10 lg:px-40 xl:px-20 2xl:px-40 items-center pt-4 sm:pt-8">
         {/* Box */}
         <div className="w-full sm:scale-90 md:scale-[85%] xl:scale-100">
           <motion.div
@@ -88,9 +88,6 @@ export default function Project() {
                     </h1>
                     <h1 className="px-1 sm:px-3  py-0.5 sm:py-1 bg-orange-400  dark:bg-green-600  text-[10px] sm:text-sm rounded-lg text-white font-semibold">
                       CSS
-                    </h1>
-                    <h1 className="px-1 sm:px-3  py-0.5 sm:py-1 bg-orange-400   dark:bg-green-600 text-[10px] sm:text-sm rounded-lg text-white font-semibold">
-                      Tailwind CSS
                     </h1>
                     <h1 className="px-1 sm:px-3  py-0.5 sm:py-1 bg-orange-400  dark:bg-green-600  text-[10px] sm:text-sm rounded-lg text-white font-semibold">
                       Next.js
