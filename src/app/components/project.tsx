@@ -20,11 +20,11 @@ export default function Project() {
   return (
     <AnimatePresence>
       {/* Container */}
-      <div className="w-full h-screen flex px-6 md:px-10 lg:px-40 xl:px-20 2xl:px-40 items-center pt-4 sm:pt-8">
+      <div className="w-full h-screen flex md:px-10 lg:px-40 xl:px-20 2xl:px-40 items-center pt-4 sm:pt-8">
         {/* Box */}
         <div className="w-full sm:scale-90 md:scale-[85%] xl:scale-100">
           <motion.div
-            className="flex items-end"
+            className="flex items-end px-6 "
             initial={{ opacity: 0, y: "-35%" }}
             animate={{ opacity: 1, y: "0%" }}
             transition={{ duration: 0.5, ease: "linear" }}
@@ -57,7 +57,7 @@ export default function Project() {
           >
             {/* fotbold */}
             <SwiperSlide>
-              <div className="w-full block xl:flex justify-between gap-[60px] py-4 xl:py-14 px-12 sm:px-20 items-center">
+              <div className="w-full block xl:flex justify-between gap-[60px] py-4 xl:py-14 px-10 sm:px-20 items-center">
                 {/* photo */}
                 <Image
                   src="/fotbold_mockup.jpg"
@@ -75,7 +75,7 @@ export default function Project() {
                   <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-2 sm:mt-4 xl:mt-5 text-[#888888] dark:text-[#b4b4b4]">
                     Jul 2024 - Present
                   </h2>
-                  <h3 className="mt-2 sm:mt-4 xl:mt-5 text-[13px] sm:text-[15px] md:text-[18px] xl:text-[20px] leading-[15px] sm:leading-[30px]">
+                  <h3 className="mt-2 sm:mt-4 xl:mt-5 text-[12px] sm:text-[15px] md:text-[18px] xl:text-[20px] leading-[15px] sm:leading-[30px]">
                     I developed a movie chart site named “NMP” that showcases
                     popular recent movies as part of a mini-project. I used
                     Next.js and TypeScript, and it is deployed on Vercel.
@@ -120,7 +120,7 @@ export default function Project() {
 
             {/* unico */}
             <SwiperSlide>
-              <div className="w-full block xl:flex justify-between gap-[60px] py-4 xl:py-14 px-12 sm:px-20 items-center">
+              <div className="w-full block xl:flex justify-between gap-[60px] py-4 xl:py-14 px-10 sm:px-20 items-center">
                 {/* photo */}
                 <Image
                   src="/fotbold_mockup.jpg"
@@ -138,7 +138,7 @@ export default function Project() {
                   <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-2 sm:mt-4 xl:mt-5 text-[#888888] dark:text-[#b4b4b4]">
                     Jul 2024 - Present
                   </h2>
-                  <h3 className="mt-2 sm:mt-4 xl:mt-5 text-[13px] sm:text-[15px] md:text-[18px] xl:text-[20px] leading-[15px] sm:leading-[30px]">
+                  <h3 className="mt-2 sm:mt-4 xl:mt-5 text-[12px] sm:text-[15px] md:text-[18px] xl:text-[20px] leading-[15px] sm:leading-[30px]">
                     I developed a movie chart site named “NMP” that showcases
                     popular recent movies as part of a mini-project. I used
                     Next.js and TypeScript, and it is deployed on Vercel.
@@ -180,11 +180,10 @@ export default function Project() {
                 </div>
               </div>
             </SwiperSlide>
-
           </Swiper>
 
           <motion.h1
-            className="text-[20px] sm:text-[28px] md:text-[30px] text-orange-500 dark:text-[#88ff69] font-monaco font-bold xl:text-[40px]"
+            className="text-[20px] sm:text-[28px] md:text-[30px] text-orange-500 dark:text-[#88ff69] font-monaco font-bold xl:text-[40px] px-6"
             initial={{ opacity: 0, y: "-35%" }}
             animate={{ opacity: 1, y: "0%" }}
             transition={{ duration: 0.5, ease: "linear" }}

@@ -153,10 +153,9 @@ table {
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color: #EAEBEF;
+  background-color: #eaebef;
   color: black;
   font-size: 18px;
-  overflow: hidden;
 }
 
 /* 태블릿 이하의 사이즈에서 기본 커서 보이게 하기 */
@@ -257,21 +256,9 @@ a {
   align-items: center;
 }
 
-
 /* Swiper.js : Pagenation */
 
 @media (max-width: 769px) {
-  .swiper-pagination {
-    width: 100%;
-    height: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    row-gap: 10px;
-    position: absolute;
-    gap: 5px;  
-  }
-
   .swiper-pagination .swiper-pagination-bullet {
     width: 7px !important;
     height: 7px !important;
@@ -286,22 +273,19 @@ a {
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: black;  /* 활성화된 버튼의 색상을 변경 */
+  background-color: black; /* 활성화된 버튼의 색상을 변경 */
 }
 
-
-.dark .swiper-pagination-bullet{
+.dark .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
   background-color: white;
   border-radius: 100%;
-  
 }
 
 .dark .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: white;  /* 활성화된 버튼의 색상을 변경 */
+  background-color: white; /* 활성화된 버튼의 색상을 변경 */
 }
-
 
 /* Swiper.js : Navigation */
 
@@ -317,22 +301,20 @@ a {
   color: white !important;
 }
 
-
 @media (max-width: 600px) {
-  .swiper-button-next{
-    scale: 65% !important;
+  .swiper-button-next {
+    scale: 55% !important;
     position: absolute !important;
     right: 0 !important;
+    padding-right: 5px;
   }
   .swiper-button-prev {
-    scale: 65% !important;
+    scale: 55% !important;
     position: absolute !important;
-    left:0 !important;
+    left: 0 !important;
+    padding-left: 5px;
   }
-  
 }
-
-
 
 /* 커서 클릭 애니메이션 */
 @keyframes cursorAnim {
