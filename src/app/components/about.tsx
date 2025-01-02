@@ -67,8 +67,9 @@ export default function About() {
           loop={false}
           modules={[Mousewheel, Pagination]}
           className="w-full h-screen"
+          touchStartPreventDefault={false}
+          touchMoveStopPropagation={false}
           onSlideChange={handleSlideChange}
-          touchStartPreventDefault={false} 
         >
           {/* First: Who am I  */}
           <SwiperSlide className="w-full h-screen">

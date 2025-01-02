@@ -156,6 +156,7 @@ body {
   background-color: #EAEBEF;
   color: black;
   font-size: 18px;
+  overflow: hidden;
 }
 
 /* 태블릿 이하의 사이즈에서 기본 커서 보이게 하기 */
@@ -328,6 +329,7 @@ a {
     position: absolute !important;
     left:0 !important;
   }
+  
 }
 
 
