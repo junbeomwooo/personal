@@ -32,7 +32,10 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
       </head>
       <body>
         <ThemeProvider
@@ -42,7 +45,7 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <NextIntlClientProvider messages={messages}>
-            <CustomCursor/>
+            <CustomCursor />
             <ClientLayout>{children}</ClientLayout>
           </NextIntlClientProvider>
         </ThemeProvider>
