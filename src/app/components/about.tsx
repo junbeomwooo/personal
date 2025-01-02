@@ -64,11 +64,11 @@ export default function About() {
             renderBullet: (index, className) =>
               `<span class="${className}"></span>`,
           }}
-          touchMoveStopPropagation={false}
           loop={false}
           modules={[Mousewheel, Pagination]}
           className="w-full h-screen"
           onSlideChange={handleSlideChange}
+          touchMoveStopPropagation={true}
         >
           {/* First: Who am I  */}
           <SwiperSlide className="w-full h-screen">
