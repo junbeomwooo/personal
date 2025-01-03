@@ -22,7 +22,7 @@ export default function Project() {
       {/* Container */}
       <div className="w-full h-screen flex md:px-10 lg:px-40 xl:px-20 2xl:px-40 items-center">
         {/* Box */}
-        <div className="w-full scale-90 md:scale-[85%] xl:scale-100">
+        <div className="w-full scale-[95%] sm:scale-90 md:scale-[85%] xl:scale-100">
           <motion.div
             className="flex items-end px-6 "
             initial={{ opacity: 0, y: "-35%" }}
