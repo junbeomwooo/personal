@@ -20,9 +20,9 @@ export default function Project() {
   return (
     <AnimatePresence>
       {/* Container */}
-      <div className="w-full h-screen flex md:px-10 lg:px-40 xl:px-20 2xl:px-40 items-center pt-4 sm:pt-8">
+      <div className="w-full h-screen flex md:px-10 lg:px-40 xl:px-20 2xl:px-40 items-center">
         {/* Box */}
-        <div className="w-full sm:scale-90 md:scale-[85%] xl:scale-100">
+        <div className="w-full scale-90 md:scale-[85%] xl:scale-100">
           <motion.div
             className="flex items-end px-6 "
             initial={{ opacity: 0, y: "-35%" }}
@@ -32,7 +32,7 @@ export default function Project() {
             <h2 className="text-[20px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-bold ">
               function
             </h2>
-            <h1 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] text-orange-500 dark:text-[#88ff69] font-monaco font-bold mt-10">
+            <h1 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] text-orange-500 dark:text-[#88ff69] font-monaco font-bold">
               {title}( ) {"{"}
             </h1>
           </motion.div>
