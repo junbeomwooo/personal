@@ -112,6 +112,7 @@ video {
   border: 0;
   font-size: 100%;
   vertical-align: baseline;
+  box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -156,7 +157,7 @@ body {
   background-color: #eaebef;
   color: black;
   font-size: 18px;
-  
+
 }
 
 /* 태블릿 이하의 사이즈에서 기본 커서 보이게 하기 */
