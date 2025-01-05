@@ -5,8 +5,13 @@ import Image from "next/image";
 import { useState } from "react";
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
+import { useTheme } from "next-themes";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Switch } from "@headlessui/react";
+
+import { LuSunMedium } from "react-icons/lu";
+import { FaRegMoon } from "react-icons/fa";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -21,7 +26,10 @@ export default function Project() {
 
   const router = useRouter();
 
-  console.log(window.innerWidth);
+  const { theme } = useTheme();
+
+  const [mode, setMode] = useState(theme);
+
   return (
     <AnimatePresence>
       {/* Container */}
@@ -65,25 +73,49 @@ export default function Project() {
               <div className="w-full h-auto block xl:flex justify-between gap-[60px] py-4 xl:py-14 px-10 sm:px-20 items-center">
                 {/* photo */}
                 <Image
-                  src="/fotbold_mockup.jpg"
-                  alt="Fotbold : Live Football Scores & Comprehensive Football Info"
+                  src={
+                    mode === "light"
+                      ? "/fotbold_mockup.jpg"
+                      : "/fotbold_mockup_dark.jpg"
+                  }
+                  alt="Fotbold : Live Football Scores & Football Info"
                   width={3000}
                   height={2000}
                   className="w-full xl:w-1/2 h-auto hoverable hover:opacity-80"
+                  onClick={() =>
+                    window.alert("The website is not implemented yet.")
+                  }
                 />
 
                 {/* explantion */}
-                <div className="w-full xl:w-1/2">
-                  <h1 className="text-[14px] sm:text-[17px] md:text-[20px] xl:text-[22px]  font-semibold leading-[18px] mt-4 sm:mt-6 xl:mt-0 md:leading-[30px]">
-                    Fotbold: Live Football Scores & Comprehensive Football Info
-                  </h1>
+                <div className="w-full xl:w-1/2 mt-4 sm:mt-6 xl:mt-0">
+                  <div className="flex items-center justify-between">
+                    {/* title */}
+                    <h1 className="text-[14px] sm:text-[17px] md:text-[20px] xl:text-[22px]  font-semibold leading-[18px] md:leading-[30px]">
+                      Fotbold: Live Football Scores & Info
+                    </h1>
+                    {/* dark/ light mode button */}
+                    <Switch
+                      checked={mode === "dark"}
+                      onChange={() => {
+                        setMode(mode === "light" ? "dark" : "light");
+                      }}
+                      className="group inline-flex h-4 w-8 sm:h-6 sm:w-11 items-center rounded-full bg-orange-500 transition data-[checked]:bg-green-600 hoverable"
+                    >
+                      <span className="size-3 sm:size-4 translate-x-1 rounded-full bg-white transition group-data-[checked]:translate-x-4 sm:group-data-[checked]:translate-x-6 flex items-center justify-center">
+                        {mode === "light" ? (
+                          <LuSunMedium className="scale-75 text-orange-600 font-bold" />
+                        ) : (
+                          <FaRegMoon className="scale-75 text-green-600 font-bold" />
+                        )}
+                      </span>
+                    </Switch>
+                  </div>
                   <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-2 sm:mt-4 xl:mt-5 text-[#888888] dark:text-[#b4b4b4]">
                     Jul 2024 - Present
                   </h2>
                   <h3 className="mt-2 sm:mt-4 xl:mt-5 text-[12px] sm:text-[15px] md:text-[18px] xl:text-[20px] leading-[15px] sm:leading-[30px]">
-                    I developed a movie chart site named “NMP” that showcases
-                    popular recent movies as part of a mini-project. I used
-                    Next.js and TypeScript, and it is deployed on Vercel.
+                    {locale ==="en" ? "This website uses the API-Football platform to provide real-time football scores and information on matches, players, teams, and leagues. It supports English, Danish,and Korean, with both dark and light themes for an optimized user experience. Inspired by FotMob, it offers comprehensive and accessible football data.":"Denne hjemmeside bruger API-Football platformen til at levere live fodboldresultater og information om kampe, spillere, hold og ligaer. Den understøtter engelsk, dansk og koreansk, og tilbyder både mørk og lys tema for en optimeret brugeroplevelse. Inspireret af FotMob tilbyder den omfattende og tilgængelig fodbolddata."}
                   </h3>
 
                   {/* skills */}
@@ -112,10 +144,20 @@ export default function Project() {
                   </div>
                   {/* buttons */}
                   <div className="flex justify-between mt-6 sm:mt-11 gap-4">
-                    <button className="bg-none w-1/2 py-3 text-orange-500 font-medium border-2 border-solid border-orange-500 hover:no-underline hoverable hover:bg-orange-500 hover:text-white hover:dark:text-white dark:border-green-500 dark:text-green-500 hover:dark:bg-green-500 text-[13px] sm:text-base" onClick={() => router.push("/")}>
+                    <button
+                      className="bg-none w-1/2 py-3 text-orange-500 font-medium border-2 border-solid border-orange-500 hover:no-underline hoverable hover:bg-orange-500 hover:text-white hover:dark:text-white dark:border-green-500 dark:text-green-500 hover:dark:bg-green-500 text-[13px] sm:text-base"
+                      onClick={() =>
+                        window.alert("The website is not implemented yet.")
+                      }
+                    >
                       Move to page
                     </button>
-                    <button className="bg-none w-1/2 py-3 text-orange-500 font-medium border-2 border-solid border-orange-500 hover:no-underline hoverable hover:bg-orange-500 hover:text-white hover:dark:text-white dark:border-green-500 dark:text-green-500 hover:dark:bg-green-500 text-[13px] sm:text-base" onClick={() => window.open("https://github.com/junbeomwooo/fodbold")}>
+                    <button
+                      className="bg-none w-1/2 py-3 text-orange-500 font-medium border-2 border-solid border-orange-500 hover:no-underline hoverable hover:bg-orange-500 hover:text-white hover:dark:text-white dark:border-green-500 dark:text-green-500 hover:dark:bg-green-500 text-[13px] sm:text-base"
+                      onClick={() =>
+                        window.open("https://github.com/junbeomwooo/fodbold")
+                      }
+                    >
                       View on Github
                     </button>
                   </div>
@@ -133,6 +175,11 @@ export default function Project() {
                   width={3000}
                   height={2000}
                   className="w-full xl:w-1/2 h-auto hoverable hover:opacity-80"
+                  onClick={() =>
+                    router.push(
+                      "http://ec2-3-73-1-218.eu-central-1.compute.amazonaws.com:3001/"
+                    )
+                  }
                 />
 
                 {/* explantion */}
@@ -201,10 +248,22 @@ export default function Project() {
                   </div>
                   {/* buttons */}
                   <div className="flex justify-between mt-6 sm:mt-11 gap-4">
-                    <button className="bg-none w-1/2 py-3 text-orange-500 font-medium border-2 border-solid border-orange-500 hover:no-underline hoverable hover:bg-orange-500 hover:text-white hover:dark:text-white dark:border-green-500 dark:text-green-500 hover:dark:bg-green-500 text-[13px] sm:text-base" onClick={() => router.push("http://ec2-3-73-1-218.eu-central-1.compute.amazonaws.com:3001/")}>
+                    <button
+                      className="bg-none w-1/2 py-3 text-orange-500 font-medium border-2 border-solid border-orange-500 hover:no-underline hoverable hover:bg-orange-500 hover:text-white hover:dark:text-white dark:border-green-500 dark:text-green-500 hover:dark:bg-green-500 text-[13px] sm:text-base"
+                      onClick={() =>
+                        router.push(
+                          "http://ec2-3-73-1-218.eu-central-1.compute.amazonaws.com:3001/"
+                        )
+                      }
+                    >
                       Move to page
                     </button>
-                    <button className="bg-none w-1/2 py-3 text-orange-500 font-medium border-2 border-solid border-orange-500 hover:no-underline hoverable hover:bg-orange-500 hover:text-white hover:dark:text-white dark:border-green-500 dark:text-green-500 hover:dark:bg-green-500 text-[13px] sm:text-base" onClick={() => window.open("https://github.com/junbeomwooo/web-unico")}>
+                    <button
+                      className="bg-none w-1/2 py-3 text-orange-500 font-medium border-2 border-solid border-orange-500 hover:no-underline hoverable hover:bg-orange-500 hover:text-white hover:dark:text-white dark:border-green-500 dark:text-green-500 hover:dark:bg-green-500 text-[13px] sm:text-base"
+                      onClick={() =>
+                        window.open("https://github.com/junbeomwooo/web-unico")
+                      }
+                    >
                       View on Github
                     </button>
                   </div>
