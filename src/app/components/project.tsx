@@ -28,7 +28,7 @@ export default function Project() {
       {/* Container */}
       <div className="w-full h-screen flex md:px-10 lg:px-40 xl:px-20 2xl:px-40 items-center">
         {/* Box */}
-        <div className="w-full scale-90 md:scale-[85%] xl:scale-100">
+        <div className="w-full h-auto scale-90 md:scale-[85%] xl:scale-100">
           <motion.div
             className="flex items-end px-6 "
             initial={{ opacity: 0, y: "-35%" }}
@@ -50,7 +50,7 @@ export default function Project() {
               swiper.navigation.nextEl.classList.add("hoverable");
               swiper.navigation.prevEl.classList.add("hoverable");
             }}
-            className="relative"
+            className="relative h-auto"
             onSlideChange={(e) => {
               if (e.activeIndex === 0) {
                 setTitle("FOTBOLD");
@@ -63,7 +63,7 @@ export default function Project() {
           >
             {/* fotbold */}
             <SwiperSlide>
-              <div className="w-full block xl:flex justify-between gap-[60px] py-4 xl:py-14 px-10 sm:px-20 items-center">
+              <div className="w-full h-auto block xl:flex justify-between gap-[60px] py-4 xl:py-14 px-10 sm:px-20 items-center">
                 {/* photo */}
                 <Image
                   src="/fotbold_mockup.jpg"

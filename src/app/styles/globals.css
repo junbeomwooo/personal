@@ -156,7 +156,7 @@ body {
   background-color: #eaebef;
   color: black;
   font-size: 18px;
-  overflow: hidden;
+  
 }
 
 /* 태블릿 이하의 사이즈에서 기본 커서 보이게 하기 */
@@ -263,18 +263,6 @@ a {
   .swiper-pagination .swiper-pagination-bullet {
     width: 7px !important;
     height: 7px !important;
-  }
-}
-
-
-/* ????? */
-@media (max-width: 768px) {
-  .swiper-slide {
-    margin: 0 !important;
-    padding: 0 !important; 
-  }
-  .swiper {
-    padding-top: 0 !important; 
   }
 }
 
