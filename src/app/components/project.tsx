@@ -22,11 +22,10 @@ export default function Project() {
   const router = useRouter();
 
   console.log(window.innerWidth);
-
   return (
     <AnimatePresence>
       {/* Container */}
-      <div className="w-full h-screen flex md:px-10 lg:px-40 xl:px-20 2xl:px-40 items-center">
+      <div className="w-full h-screen flex md:px-10 lg:px-40 xl:px-20 2xl:px-40 items-center relative">
         {/* Box */}
         <div className="w-full h-auto scale-90 md:scale-[85%] xl:scale-100">
           <motion.div
@@ -50,7 +49,7 @@ export default function Project() {
               swiper.navigation.nextEl.classList.add("hoverable");
               swiper.navigation.prevEl.classList.add("hoverable");
             }}
-            className="relative h-auto"
+            className="absolute h-auto"
             onSlideChange={(e) => {
               if (e.activeIndex === 0) {
                 setTitle("FOTBOLD");
