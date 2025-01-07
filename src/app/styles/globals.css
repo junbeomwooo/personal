@@ -187,6 +187,7 @@ body {
   /* 기본 호버시 포인트 커서 없애기 */
   a:hover,
   button:hover,
+  textarea:hover,
   input:hover {
     text-decoration: underline;
     cursor: none;

@@ -369,7 +369,7 @@ export default function Header() {
                   transition: { duration: 0.2, ease: "linear" },
                 }}
                 onClick={() => {
-                  router.push(`/${locale}/resume`);
+                  window.open('/resume.pdf','_blank');
                   setIsMenuOpen(false);
                 }}
               >
