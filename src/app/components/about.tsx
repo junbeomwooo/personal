@@ -16,6 +16,7 @@ import "../styles/globals.css";
 
 // import required modules
 import { Mousewheel, Pagination } from "swiper/modules";
+import ShuffleText from "react-shuffle-text";
 
 // Icons
 import { FaHtml5 } from "react-icons/fa";
@@ -34,13 +35,22 @@ import { SiAdobephotoshop } from "react-icons/si";
 export default function About() {
   const locale = useLocale();
 
+  const [firstSlideAnimation, setFirstSlideAnimation] = useState(true);
   const [secondSlideAnimation, setSecondSlideAnimation] = useState(false);
   const [thirdSlideAnimation, setThirdSlideAnimation] = useState(false);
 
   const handleSlideChange = (e: SwiperType) => {
-    if (e.activeIndex === 1) {
+    if (e.activeIndex === 0) {
+      setFirstSlideAnimation(true);
+      setSecondSlideAnimation(false);
+      setThirdSlideAnimation(false);
+    } else if (e.activeIndex === 1) {
+      setFirstSlideAnimation(false);
       setSecondSlideAnimation(true);
+      setThirdSlideAnimation(false);
     } else if (e.activeIndex === 2) {
+      setFirstSlideAnimation(false);
+      setSecondSlideAnimation(false);
       setThirdSlideAnimation(true);
     }
   };
@@ -86,24 +96,21 @@ export default function About() {
                 {/* about */}
                 <div className="w-full">
                   {/* funtion About() */}
-                  <motion.div
-                    className="flex items-end"
-                    initial={{ opacity: 0, y: "-35%" }}
-                    animate={{ opacity: 1, y: "0%" }}
-                    transition={{ duration: 0.5, ease: "linear" }}
-                  >
+                  <div className="flex items-end">
                     <h2 className="text-[20px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-bold ">
                       function
                     </h2>
-                    <h1 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] text-orange-500 dark:text-[#88ff69] font-monaco font-bold mt-10">
-                      {h("whoAmI")}( ) {"{"}
-                    </h1>
-                  </motion.div>
+                    {firstSlideAnimation && (
+                      <h1 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] text-orange-500 dark:text-[#88ff69] font-monaco font-bold mt-10">
+                        <ShuffleText content={h("whoAmI")} />( ) {"{"}
+                      </h1>
+                    )}
+                  </div>
 
                   {/* content */}
                   <motion.div
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    animate={{ opacity: firstSlideAnimation ? 1 : 0 }}
                     transition={{ duration: 1, ease: "linear" }}
                     className="py-4 xl:max-w-[900px]"
                   >
@@ -176,22 +183,16 @@ export default function About() {
                 {/* Skills */}
                 <div className="w-full xl:w-3/5">
                   {/* funtion Skills() */}
-                  <motion.div
-                    className="flex items-end"
-                    initial={{ opacity: 0, y: "-35%" }}
-                    animate={{
-                      opacity: secondSlideAnimation ? 1 : 0,
-                      y: secondSlideAnimation ? "0%" : "-35%",
-                    }}
-                    transition={{ duration: 0.5, ease: "linear" }}
-                  >
+                  <div className="flex items-end">
                     <h2 className="text-[20px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-bold ">
                       function
                     </h2>
-                    <h1 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] text-orange-500 dark:text-[#88ff69] font-monaco font-bold mt-10">
-                      {h("skills")}( ) {"{"}
-                    </h1>
-                  </motion.div>
+                    {secondSlideAnimation && (
+                      <h1 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] text-orange-500 dark:text-[#88ff69] font-monaco font-bold mt-10">
+                        <ShuffleText content={h("skills")} />( ) {"{"}
+                      </h1>
+                    )}
+                  </div>
 
                   {/* graph */}
                   <div className="font-medium text-sm ">
@@ -488,22 +489,17 @@ export default function About() {
             <div className="flex items-center justify-center h-screen">
               <div className="w-full h-auto block xl:flex px-6 md:px-10 lg:px-40 justify-center items-center">
                 <div>
-                  <motion.div
-                    className="flex items-end"
-                    initial={{ opacity: 0, y: "-35%" }}
-                    animate={{
-                      opacity: thirdSlideAnimation ? 1 : 0,
-                      y: thirdSlideAnimation ? "0%" : "-35%",
-                    }}
-                    transition={{ duration: 0.5, ease: "linear" }}
-                  >
+                  {/* title */}
+                  <div className="flex items-end">
                     <h2 className="text-[20px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-bold ">
                       function
                     </h2>
-                    <h1 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] text-orange-500 dark:text-[#88ff69] font-monaco font-bold mt-10">
-                      {h("education")}( ) {"{"}
-                    </h1>
-                  </motion.div>
+                    {thirdSlideAnimation && (
+                      <h1 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] text-orange-500 dark:text-[#88ff69] font-monaco font-bold mt-10">
+                        <ShuffleText content={h("education")} />( ) {"{"}
+                      </h1>
+                    )}
+                  </div>
 
                   {/* content */}
                   <motion.div

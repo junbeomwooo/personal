@@ -334,3 +334,19 @@ a {
 .expand {
   animation: cursorAnim 0.4s forwards;
 }
+
+.shuffle-text .shuffle-text-char {
+  animation: 0.5s ease-in-out both myWordEnter; /* none for no effect */
+}
+ 
+@keyframes myWordEnter {
+  0% {
+    opacity: 0;
+    transform: translate(-100%, 0) scale(1.5);
+  }
+ 
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
