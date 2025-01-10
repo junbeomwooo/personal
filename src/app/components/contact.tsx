@@ -5,23 +5,52 @@ import { FaLinkedin } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { AiFillInstagram } from "react-icons/ai";
 
-console.log(process.env.EMAIL_USER);
-console.log(process.env.NEXT_PUBLIC_EMAIL_USER);
-console.log('Current Environment:', process.env.NODE_ENV);
-
-const submitForm = async(e: React.FormEvent<HTMLFormElement>) => {
+const submitForm = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
   const current = e.currentTarget;
-  
-  const email = current.email.value.trim().toLowerCase();;
+
+  /**  Regex validation */
+  const valueRegex = /^(?!\s*$).+/;
+
+  // email format
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  const email = current.email.value.trim().toLowerCase();
   const subject = current.subject.value;
   const message = current.message.value;
 
   try {
+    // Regex validation
+    if (!valueRegex.test(email)) {
+      window.alert("Please enter your email.");
+      return;
+    }
+
+    if (!valueRegex.test(subject)) {
+      window.alert("Please enter your subject.");
+      return;
+    }
+
+    if (!valueRegex.test(message)) {
+      window.alert("Please enter your message.");
+      return;
+    }
+
+    // Check email format
+    if (!emailRegex.test(email)) {
+      window.alert("Please enter your message.");
+      return;
+    }
+
+
     const res = await fetch("/api/send-mail", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({email:email, subject:subject, message:message}),
+      body: JSON.stringify({
+        email: email,
+        subject: subject,
+        message: message,
+      }),
     });
 
     const result = await res.json();
@@ -30,12 +59,11 @@ const submitForm = async(e: React.FormEvent<HTMLFormElement>) => {
     } else {
       window.alert("Failed to send email.");
     }
-  } catch(error) {
+  } catch (error) {
     console.error("Error:", error);
     window.alert("An error occurred.");
   }
-}
-
+};
 
 export default function Contact() {
   return (
@@ -51,7 +79,11 @@ export default function Contact() {
         </h2>
 
         {/* form */}
-        <form id="contactForm" onSubmit={submitForm}className="w-full xl:w-2/3 m-auto mt-10 lg:mt-20">
+        <form
+          id="contactForm"
+          onSubmit={submitForm}
+          className="w-full xl:w-2/3 m-auto mt-10 lg:mt-20"
+        >
           <div className="flex gap-4 xl:gap-20">
             <div className="w-1/2">
               <h3 className="font-extralight text-[12px] xl:text-base">
@@ -91,7 +123,11 @@ export default function Contact() {
           </div>
         </form>
         <div className="flex justify-center w-full">
-          <button type="submit" form="contactForm" className="w-full xl:w-1/3 h-10 lg:h-14 border-2 border-solid border-orange-500 dark:border-green-500 text-orange-500 dark:text-green-500 mt-10 hover:no-underline hoverable hover:text-white hover:bg-orange-500 dark:hover:text-white dark:hover:bg-[#21C55D] text-[14px]">
+          <button
+            type="submit"
+            form="contactForm"
+            className="w-full xl:w-1/3 h-10 lg:h-14 border-2 border-solid border-orange-500 dark:border-green-500 text-orange-500 dark:text-green-500 mt-10 hover:no-underline hoverable hover:text-white hover:bg-orange-500 dark:hover:text-white dark:hover:bg-[#21C55D] text-[14px]"
+          >
             Submit
           </button>
           {/* 여기 애니메이션 추가하고 디자인 마무리 한 뒤 로딩바 구현하기 */}
@@ -103,16 +139,36 @@ export default function Contact() {
             <hr className="border-1 border-solid border-gray-400 w-full ml-4" />
           </div>
           <div className="flex gap-10 justify-center mt-6 lg:mt-10 text-white">
-            <div className="flex items-center p-1 lg:p-2 bg-orange-500 dark:bg-[#21C55D] rounded-full hoverable">
+            <div
+              className="flex items-center p-1 lg:p-2 bg-orange-500 dark:bg-[#21C55D] rounded-full hoverable"
+              onClick={() => {
+                window.open("https://github.com/junbeomwooo");
+              }}
+            >
               <FaGithub className="w-6 h-6 lg:w-8 lg:h-8 scale-90" />
             </div>
-            <div className="flex items-center p-1 lg:p-2 bg-orange-500 dark:bg-[#21C55D] rounded-full hoverable">
+            <div
+              className="flex items-center p-1 lg:p-2 bg-orange-500 dark:bg-[#21C55D] rounded-full hoverable"
+              onClick={() => {
+                window.open("https://www.linkedin.com/in/woojunbeom/");
+              }}
+            >
               <FaLinkedin className="w-6 h-6 lg:w-8 lg:h-8 scale-[80%]" />
             </div>
-            <div className="flex items-center p-1 lg:p-2 bg-orange-500 dark:bg-[#21C55D] rounded-full hoverable">
+            <div
+              className="flex items-center p-1 lg:p-2 bg-orange-500 dark:bg-[#21C55D] rounded-full hoverable"
+              onClick={() => {
+                window.open("https://www.instagram.com/wwjjjbbb/");
+              }}
+            >
               <AiFillInstagram className="w-6 h-6 lg:w-8 lg:h-8 scale-90" />
             </div>
-            <div className="flex items-center p-1 lg:p-2 bg-orange-500  dark:bg-[#21C55D] rounded-full hoverable">
+            <div
+              className="flex items-center p-1 lg:p-2 bg-orange-500  dark:bg-[#21C55D] rounded-full hoverable"
+              onClick={() => {
+                window.location.href = "mailto:junbeom2.woo@gmail.com";
+              }}
+            >
               <IoIosMail className="w-6 h-6 lg:w-8 lg:h-8 scale-90" />
             </div>
           </div>
