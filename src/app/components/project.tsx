@@ -427,7 +427,7 @@ export default function Project() {
                   {/* photo */}
                   <Image
                     src="/npm.png"
-                    alt="UNICO: Online Eyewear Store"
+                    alt="NMP(Next Movie Project)"
                     width={3000}
                     height={2000}
                     onClick={() =>
