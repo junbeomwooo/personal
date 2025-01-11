@@ -1,17 +1,20 @@
 {
-    "HomePage": {
-      "smallTitle": "Aiming to be a skilled Full Stack Developer",
-      "home":"home",
-      "about":"about",
-      "project":"project",
-      "project2": "Project",
-      "resume":"resume",
-      "contact":"contact",
+  "HomePage": {
+    "smallTitle": "Aiming to be a skilled Full Stack Developer",
+    "home": "home",
+    "about": "about",
+    "project": "project",
+    "project2": "Project",
+    "resume": "resume",
+    "contact": "contact",
+    "whoAmI": "WhoAmI",
+    "skills": "Skills",
+    "education": "Education",
+    "hoverMe": "Hover me!"
+  },
 
-      "whoAmI":"WhoAmI",
-      "skills":"Skills",
-      "education": "Education",
-
-      "hoverMe":"Hover me!"
-    }
+  "Contact": {
+    "subject": "Subject",
+    "message": "Message"
   }
+}

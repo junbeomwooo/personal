@@ -7,11 +7,14 @@
     "project2": "Projekt",
     "resume": "CV",
     "contact": "kontakt",
-
-    "whoAmI":"HvemErJeg",
-    "skills":"Færdigheder",
+    "whoAmI": "HvemErJeg",
+    "skills": "Færdigheder",
     "education": "Uddannelse",
-
     "hoverMe": "Peg på mig!"
+  },
+
+  "Contact": {
+    "subject": "Emne",
+    "message": "Besked"
   }
 }
