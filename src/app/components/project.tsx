@@ -123,7 +123,7 @@ export default function Project() {
                       Jul 2024 - Present
                     </h2>
                     {/* Explanation */}
-                    <h3 className="mt-2 sm:mt-4 xl:mt-5 text-[12px] sm:text-[15px] md:text-[18px] xl:text-[20px] leading-[15px] sm:leading-[30px]">
+                    <h3 className="mt-2 sm:mt-4 xl:mt-5 text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] leading-[15px] sm:leading-[30px]">
                       {locale === "en"
                         ? "This website uses the API-Football platform to provide real-time football scores and information on matches, players, teams, and leagues. It supports English, Danish,and Korean, with both dark and light themes for an optimized user experience. Inspired by FotMob, it offers comprehensive and accessible football data."
                         : "Denne hjemmeside bruger API-Football platformen til at levere live fodboldresultater og information om kampe, spillere, hold og ligaer. Den understøtter engelsk, dansk og koreansk, og tilbyder både mørk og lys tema for en optimeret brugeroplevelse. Inspireret af FotMob tilbyder den omfattende og tilgængelig fodbolddata."}
@@ -264,7 +264,7 @@ export default function Project() {
                       Aug 2022 - Jan 2023
                     </h2>
                     {locale === "en" ? (
-                      <h3 className="mt-2 sm:mt-4 xl:mt-5 text-[12px] sm:text-[15px] md:text-[18px] xl:text-[20px] leading-[15px] sm:leading-[30px]">
+                      <h3 className="mt-2 sm:mt-4 xl:mt-5 text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] leading-[15px] sm:leading-[30px]">
                         I created a virtual brand named ‘UNICO’ specializing in
                         selling sunglasses and eyeglasses through a responsive
                         website. The site ensures smooth communication between
@@ -273,7 +273,7 @@ export default function Project() {
                         dynamic web applications using MySQL.
                       </h3>
                     ) : (
-                      <h3 className="mt-2 sm:mt-4 xl:mt-5 text-[12px] sm:text-[15px] md:text-[18px] xl:text-[20px] leading-[15px] sm:leading-[30px]">
+                      <h3 className="mt-2 sm:mt-4 xl:mt-5 text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] leading-[15px] sm:leading-[30px]">
                         Jeg har oprettet et virtuelt brand ved navn ‘UNICO’, der
                         specialiserer sig i at sælge solbriller og briller
                         gennem en responsiv hjemmeside. Siden sikrer smidig
@@ -450,7 +450,7 @@ export default function Project() {
                     May 2024 - Jul 2024
                   </h2>
                   {locale === "en" ? (
-                    <h3 className="mt-2 sm:mt-4 xl:mt-5 text-[12px] sm:text-[15px] md:text-[18px] xl:text-[20px] leading-[15px] sm:leading-[30px]">
+                    <h3 className="mt-2 sm:mt-4 xl:mt-5 text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] leading-[15px] sm:leading-[30px]">
                       I developed a movie chart site named “NMP” as part of a
                       mini-project to practice Next.js. The site showcases
                       popular recent movies, offering detailed information about
@@ -458,7 +458,7 @@ export default function Project() {
                       videos and recommendations for similar movies.
                     </h3>
                   ) : (
-                    <h3 className="mt-2 sm:mt-4 xl:mt-5 text-[12px] sm:text-[15px] md:text-[18px] xl:text-[20px] leading-[15px] sm:leading-[30px]">
+                    <h3 className="mt-2 sm:mt-4 xl:mt-5 text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] leading-[15px] sm:leading-[30px]">
                       Jeg udviklede et filmsite kaldet “NMP” som en del af et
                       mini-projekt for at øve mig i Next.js. Sitet præsenterer
                       populære, aktuelle film og tilbyder detaljerede

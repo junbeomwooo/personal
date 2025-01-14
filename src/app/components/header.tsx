@@ -49,7 +49,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="fixed w-full mt-4 sm:mt-8 z-30 max-w-[1921px]">
+      <div className="fixed w-full mt-4 sm:mt-6 z-30 max-w-[1921px]">
         <div className="flex justify-between items-center w-100vh mx-6 md:mx-10 lg:mx-20 ">
           {/* 로고 */}
           <div>

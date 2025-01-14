@@ -127,7 +127,7 @@ export default function Contact() {
                     : "Indtast din email"
                 }
               />
-              <hr className="w-full border-1 xl:border border-solid border-black dark:border-white" />
+              <hr className="w-full border-1 border-solid border-black dark:border-white" />
             </div>
             <div className="w-1/2">
               <h3 className="font-extralight text-[12px] xl:text-base">
@@ -143,7 +143,7 @@ export default function Contact() {
                     : "Indtast dit emne"
                 }
               />
-              <hr className="w-full border-1 xl:border border-solid border-black dark:border-white" />
+              <hr className="w-full border-1 border-solid border-black dark:border-white" />
             </div>
           </div>
           <div className="w-full mt-4 xl:mt-10">
@@ -159,14 +159,14 @@ export default function Contact() {
                   : "Indtast din besked"
               }
             />
-            <hr className="w-full border-1 lg:border border-solid border-black dark:border-white" />
+            <hr className="w-full border-1 border-solid border-black dark:border-white" />
           </div>
         </motion.form>
         <div className="flex justify-center w-full">
           <motion.button
             type="submit"
             form="contactForm"
-            className={`w-full xl:w-1/3 h-10 lg:h-14 border-2 border-solid ${
+            className={`w-full xl:w-1/3 h-10 lg:h-14 border border-solid ${
               loading
                 ? "bg-orange-500 dark:bg-[#21C55D] text-white dark:text-white"
                 : "bg-none"
