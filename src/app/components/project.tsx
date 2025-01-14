@@ -426,7 +426,7 @@ export default function Project() {
                 >
                   {/* photo */}
                   <Image
-                    src="/npm.png"
+                    src="/nmp.png"
                     alt="NMP(Next Movie Project)"
                     width={3000}
                     height={2000}
