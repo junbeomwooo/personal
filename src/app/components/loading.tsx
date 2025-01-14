@@ -23,10 +23,7 @@ export default function Loading({ setLoading }: LoadingProps) {
   const [showExcute3, setShowExcute3] = useState(false);
 
   return (
-    <div className=" max-w-[1921px] m-auto" >
-    <div
-      className="w-full h-full pt-10 px-20 font-monaco text-lg max-xl:text-sm max-xl:px-10 dark:text-[#88ff69] z-50 absolute bg-white dark:bg-black"
-    >
+    <div className="w-full h-full pt-10 px-20 font-monaco text-lg max-xl:text-sm max-xl:px-10 dark:text-[#88ff69] z-50 absolute bg-white dark:bg-black max-w-[1921px]">
       {/* 로딩바의 첫번째 화면 */}
       {!secondScreen && (
         <div className="flex flex-col flex-wrap">
@@ -123,11 +120,13 @@ export default function Loading({ setLoading }: LoadingProps) {
       )}
 
       <div className="absolute right-0 text-base cursor-pointer mr-20 bottom-0 mb-20 max-xl:mr-10 max-xl:text-sm max-xl:mb-10 hoverable">
-        <button className="hover:underline hoverable" onClick={() => setLoading(false)}>
+        <button
+          className="hover:underline hoverable"
+          onClick={() => setLoading(false)}
+        >
           Skip intro{" "}
         </button>
       </div>
-    </div>
     </div>
   );
 }

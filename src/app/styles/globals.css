@@ -352,3 +352,7 @@ a {
     transform: translate(0, 0) scale(1);
   }
 }
+
+.shuffle-text-char {
+  animation: 10s ease-in-out both myWordEnter;
+}

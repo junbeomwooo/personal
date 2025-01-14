@@ -49,7 +49,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="fixed w-full mt-4 sm:mt-6 z-30 max-w-[1921px]">
+      <div className="fixed w-full mt-2 sm:mt-6 z-30 max-w-[1921px]">
         <div className="flex justify-between items-center w-100vh mx-6 md:mx-10 lg:mx-20 ">
           {/* 로고 */}
           <div>
@@ -225,7 +225,7 @@ export default function Header() {
 
       <AnimatePresence>
         {isMenuOpen && (
-          <div className="text-white dark:text-white fixed z-20 w-full h-full">
+          <div className="text-white dark:text-white fixed z-20 w-full h-full max-w-[1921px]">
             <motion.div
               className="w-full h-full bg-black opacity-60 absolute z-20"
               initial={{ y: "-100%" }}

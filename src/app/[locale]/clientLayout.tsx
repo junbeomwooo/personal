@@ -10,8 +10,9 @@ export default function ClientLayout({
   const [loading, setLoading] = useState(true);
 
   return loading ? (
-
-    <Loading setLoading={setLoading} />
+    <div className="max-w-[1921px] m-auto ">
+      <Loading setLoading={setLoading} />
+    </div>
   ) : (
     <div className="max-w-[1921px] m-auto ">
       <Header />
