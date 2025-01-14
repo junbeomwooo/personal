@@ -188,7 +188,8 @@ body {
   a:hover,
   button:hover,
   textarea:hover,
-  input:hover {
+  input:hover,
+  canvas:hover {
     text-decoration: underline;
     cursor: none;
   }
