@@ -38,7 +38,7 @@ export default function Project() {
         {/* Box */}
         <div className="w-full h-auto scale-90 sm:scale-[80%] xl:scale-100">
           <div className="flex items-end px-6 ">
-            <h2 className="text-[20px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-bold ">
+          <h2 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-bold ">
               function
             </h2>
             <h1 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] text-orange-500 dark:text-[#88ff69] font-monaco font-bold">

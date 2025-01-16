@@ -97,7 +97,7 @@ export default function About() {
                 <div className="w-full">
                   {/* funtion About() */}
                   <div className="flex items-end">
-                    <h2 className="text-[20px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-bold ">
+                  <h2 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-bold ">
                       function
                     </h2>
                     {firstSlideAnimation && (
@@ -184,7 +184,7 @@ export default function About() {
                 <div className="w-full xl:w-3/5">
                   {/* funtion Skills() */}
                   <div className="flex items-end">
-                    <h2 className="text-[20px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-bold ">
+                  <h2 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-bold ">
                       function
                     </h2>
                     {secondSlideAnimation && (
@@ -491,7 +491,7 @@ export default function About() {
                 <div>
                   {/* title */}
                   <div className="flex items-end">
-                    <h2 className="text-[20px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-bold ">
+                  <h2 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-bold ">
                       function
                     </h2>
                     {thirdSlideAnimation && (

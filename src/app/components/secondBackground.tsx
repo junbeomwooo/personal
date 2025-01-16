@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import { useGlitch, GlitchHandle } from 'react-powerglitch'
 
-export default function Background1() {
+export default function SecondBackground() {
   const options = {
     "playMode": "always",
     "createContainers": true,

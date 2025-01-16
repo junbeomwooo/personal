@@ -10,6 +10,9 @@ import {
 } from "@react-three/drei";
 import { SpinningBox } from "./SpinningBox";
 import { useTheme } from "next-themes";
+import { useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 
 THREE.ColorManagement.legacyMode = false;
 
@@ -57,6 +60,7 @@ export function Instances({ children, ...props }) {
 export function Computers(props) {
   const { nodes: n, materials: m } = useGLTF("/computers_1-transformed.glb");
   const instances = useContext(context);
+  const { theme } = useTheme();
 
   return (
     <group {...props} dispose={null}>
@@ -675,10 +679,14 @@ export function Computers(props) {
         panel="Object_207"
         position={[0.27, 1.53, -2.61]}
       />
-      <ScreenText
+      <ScreenCustom
+        invert={theme === "light" ? false : true}
+        text="about"
         frame="Object_209"
         panel="Object_210"
-        y={5}
+        fontSize={0.8}
+        x={-0.1}
+        y={5.2}
         position={[-1.43, 2.5, -1.8]}
         rotation={[0, 1, 0]}
       />
@@ -691,18 +699,24 @@ export function Computers(props) {
         position={[-2.73, 0.63, -0.52]}
         rotation={[0, 1.09, 0]}
       />
-      <ScreenText
-        invert
+      <ScreenCustom
+        invert={theme === "light" ? false : true}
+        text="contact"
+        fontSize={0.6}
+        x={-0.1}
+        y={1}
         frame="Object_215"
         panel="Object_216"
         position={[1.84, 0.38, -1.77]}
         rotation={[0, -Math.PI / 9, 0]}
       />
-      <ScreenText
-        invert
+      <ScreenResume
+        invert={theme === "light" ? false : true}
+        text="resume"
+        fontSize={0.7}
         frame="Object_218"
         panel="Object_219"
-        x={-5}
+        x={-4.68}
         position={[3.11, 2.15, -0.18]}
         rotation={[0, -0.79, 0]}
         scale={0.81}
@@ -722,9 +736,14 @@ export function Computers(props) {
         position={[-3.9, 4.29, -2.64]}
         rotation={[0, 0.54, 0]}
       />
-      <ScreenText
+      <ScreenCustom
+        invert={theme === "light" ? false : true}
+        text="project"
         frame="Object_227"
         panel="Object_228"
+        x={-0.05}
+        y={1}
+        fontSize={0.6}
         position={[0.96, 4.28, -4.2]}
         rotation={[0, -0.65, 0]}
       />
@@ -815,7 +834,123 @@ function ScreenText({ invert, x = 0, y = 1.2, ...props }) {
     </Screen>
   );
 }
+function ScreenCustom({ invert, text, fontSize, x = 0, y = 1.2, ...props }) {
+  const textRef = useRef();
+  const { theme } = useTheme();
+  const router = useRouter();
+  const locale = useLocale();
+  const h = useTranslations("HomePage");
 
+  // Remove animation
+  useFrame(() => {
+    textRef.current.position.x = x; // fixed static position
+  });
+
+  return (
+    <Screen {...props}>
+      <PerspectiveCamera
+        makeDefault
+        manual
+        aspect={1 / 1}
+        position={[0, 0, 15]}
+      />
+      <color
+        attach="background"
+        args={[
+          theme === "light"
+            ? invert
+              ? "orange"
+              : "black"
+            : invert
+            ? "black"
+            : "#35c19f",
+        ]}
+      />
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[10, 10, 5]} />
+      <Text
+        font="/Inter-Medium.woff"
+        position={[x, y, 0]}
+        ref={textRef}
+        fontSize={fontSize}
+        letterSpacing={0}
+        textAlign="center" // 중앙 정렬
+        anchorX="center" // 텍스트의 X축 기준을 중심으로 설정
+        anchorY="middle" // 텍스트의 Y축 기준을 중심으로 설정
+        color={
+          theme === "light"
+            ? !invert
+              ? "orange"
+              : "black"
+            : !invert
+            ? "black"
+            : "#35c19f"
+        }
+        onClick={() => router.push(`/${locale}/${text}`)}
+      >
+        {h(text).toUpperCase()}
+      </Text>
+    </Screen>
+  );
+}
+
+function ScreenResume({ invert, text, fontSize, x = 0, y = 1.2, ...props }) {
+  const textRef = useRef();
+  const { theme } = useTheme();
+  const h = useTranslations("HomePage");
+
+  // Remove animation
+  useFrame(() => {
+    textRef.current.position.x = x; // fixed static position
+  });
+
+  return (
+    <Screen {...props}>
+      <PerspectiveCamera
+        makeDefault
+        manual
+        aspect={1 / 1}
+        position={[0, 0, 15]}
+      />
+      <color
+        attach="background"
+        args={[
+          theme === "light"
+            ? invert
+              ? "orange"
+              : "black"
+            : invert
+            ? "black"
+            : "#35c19f",
+        ]}
+      />
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[10, 10, 5]} />
+      <Text
+        font="/Inter-Medium.woff"
+        position={[x, y, 0]}
+        ref={textRef}
+        fontSize={fontSize}
+        letterSpacing={0}
+        textAlign="center" // 중앙 정렬
+        anchorX="center" // 텍스트의 X축 기준을 중심으로 설정
+        anchorY="middle" // 텍스트의 Y축 기준을 중심으로 설정
+        color={
+          theme === "light"
+            ? !invert
+              ? "orange"
+              : "black"
+            : !invert
+            ? "black"
+            : "#35c19f"
+        }
+        onClick={() => window.open("/resume.pdf", "_blank")}
+      >
+        {h(text).toUpperCase()}
+      </Text>
+    </Screen>
+  );
+}
 /* Renders a monitor with a spinning box */
 function ScreenInteractive(props) {
   const { theme } = useTheme();
@@ -829,7 +964,7 @@ function ScreenInteractive(props) {
       />
       <color
         attach="background"
-        args={theme === "light" ? ["#18a4b6"] : ["orange"]}
+        args={theme === "light" ? ["#00ce59"] : ["orange"]}
       />
       <ambientLight intensity={Math.PI / 2} />
       <pointLight decay={0} position={[10, 10, 10]} intensity={Math.PI} />

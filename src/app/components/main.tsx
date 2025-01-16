@@ -2,7 +2,7 @@
 
 import Background from "./background";
 import MainContent from "./mainContent";
-// import Background1 from "./background1";
+// import SecondBackground from "./secondBackground";
 
 export default function Main() {
 
@@ -10,7 +10,7 @@ export default function Main() {
     <div>
       <Background />
       <MainContent />
-      {/* <Background1/> */}
+      {/* <SecondBackground/> */}
 
     </div>
   );
