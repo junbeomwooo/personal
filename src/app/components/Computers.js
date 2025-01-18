@@ -746,6 +746,7 @@ export function Computers(props) {
         fontSize={0.6}
         position={[0.96, 4.28, -4.2]}
         rotation={[0, -0.65, 0]}
+        onPointerOver={() => console.log("project")}
       />
       <ScreenText
         frame="Object_230"

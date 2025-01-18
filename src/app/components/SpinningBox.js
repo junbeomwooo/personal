@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { useCursor } from '@react-three/drei'
 
 export function SpinningBox({ scale, ...props }) {
   // This reference gives us direct access to the THREE.Mesh object
@@ -8,7 +7,6 @@ export function SpinningBox({ scale, ...props }) {
   // Hold state for hovered and clicked events
   const [hovered, hover] = useState(false)
   const [clicked, click] = useState(false)
-  useCursor(hovered)
   // Subscribe this component to the render-loop, rotate the mesh every frame
   useFrame((state, delta) => (ref.current.rotation.x = ref.current.rotation.y += delta))
   // Return the view, these are regular Threejs elements expressed in JSX
