@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
-import { ThemeProvider } from "../components/theme-provider";
+import { ThemeProvider } from "../context/theme-provider";
 import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import ClientLayout from "./clientLayout";
 import CustomCursor from "../components/customCursor";
+import { CursorProvider } from "../context/CursorContext";
 
 export const metadata: Metadata = {
   title: "Junbeom Woo - Full Stack Developer",
@@ -45,8 +46,10 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <NextIntlClientProvider messages={messages}>
-            <CustomCursor />
-            <ClientLayout>{children}</ClientLayout>
+            <CursorProvider>
+              <CustomCursor />
+              <ClientLayout>{children}</ClientLayout>
+            </CursorProvider>
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

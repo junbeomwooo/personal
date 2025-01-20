@@ -14,15 +14,17 @@ import { SiExpress } from "react-icons/si";
 import { DiMysql } from "react-icons/di";
 import { SiAdobeillustrator } from "react-icons/si";
 import { SiAdobephotoshop } from "react-icons/si";
+import { useContextCursor } from "../context/CursorContext";
 
 export default function CustomCursor() {
+  
   /** for hovering */
 
   // 커서 참조
   const cursorRef = useRef<HTMLDivElement | null>(null);
 
-  // hover 상태 추적
-  const [isHovering, setIsHovering] = useState(false);
+  // define gloable context value 
+  const {isHovering, setIsHovering} = useContextCursor();
 
   /** for magnifying */
 
@@ -77,7 +79,9 @@ export default function CustomCursor() {
               );
               break;
             case "JS":
-              setCursorIcon(<FaJs className="text-white dark:text-black  w-[10px] h-[10px]" />);
+              setCursorIcon(
+                <FaJs className="text-white dark:text-black  w-[10px] h-[10px]" />
+              );
               break;
             case "TS":
               setCursorIcon(
@@ -150,7 +154,7 @@ export default function CustomCursor() {
       document.removeEventListener("mouseout", handleHover);
       document.removeEventListener("click", handleClick);
     };
-  }, []);
+  }, [setIsHovering]);
 
   return (
     <div

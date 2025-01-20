@@ -13,6 +13,7 @@ import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
 import { useTranslations } from "next-intl";
+import { useContextCursor } from "../context/CursorContext";
 
 THREE.ColorManagement.legacyMode = false;
 
@@ -56,6 +57,7 @@ export function Instances({ children, ...props }) {
     </Merged>
   );
 }
+
 
 export function Computers(props) {
   const { nodes: n, materials: m } = useGLTF("/computers_1-transformed.glb");
@@ -746,7 +748,6 @@ export function Computers(props) {
         fontSize={0.6}
         position={[0.96, 4.28, -4.2]}
         rotation={[0, -0.65, 0]}
-        onPointerOver={() => console.log("project")}
       />
       <ScreenText
         frame="Object_230"
@@ -841,6 +842,7 @@ function ScreenCustom({ invert, text, fontSize, x = 0, y = 1.2, ...props }) {
   const router = useRouter();
   const locale = useLocale();
   const h = useTranslations("HomePage");
+  const { setIsHovering } = useContextCursor();
 
   // Remove animation
   useFrame(() => {
@@ -888,6 +890,8 @@ function ScreenCustom({ invert, text, fontSize, x = 0, y = 1.2, ...props }) {
             : "#35c19f"
         }
         onClick={() => router.push(`/${locale}/${text}`)}
+        onPointerOver={() => setIsHovering(true)}
+        onPointerOut={() => setIsHovering(false)}
       >
         {h(text).toUpperCase()}
       </Text>
@@ -899,6 +903,7 @@ function ScreenResume({ invert, text, fontSize, x = 0, y = 1.2, ...props }) {
   const textRef = useRef();
   const { theme } = useTheme();
   const h = useTranslations("HomePage");
+  const { setIsHovering } = useContextCursor();
 
   // Remove animation
   useFrame(() => {
@@ -946,6 +951,8 @@ function ScreenResume({ invert, text, fontSize, x = 0, y = 1.2, ...props }) {
             : "#35c19f"
         }
         onClick={() => window.open("/resume.pdf", "_blank")}
+        onPointerOver={() => setIsHovering(true)}
+        onPointerOut={() => setIsHovering(false)}
       >
         {h(text).toUpperCase()}
       </Text>
