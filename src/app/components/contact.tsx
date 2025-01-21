@@ -187,7 +187,7 @@ export default function Contact() {
           >
             <hr className="border-1 border-solid border-gray-400 w-full mr-4" />
             <h3 className="text-[11px] text-gray-400">Social</h3>
-            <motion.hr className="border-1 border-solid border-gray-400 w-full ml-4" />
+            <hr className="border-1 border-solid border-gray-400 w-full ml-4" />
           </motion.div>
           <div className="flex gap-10 justify-center mt-6 lg:mt-10 text-white">
             <motion.div

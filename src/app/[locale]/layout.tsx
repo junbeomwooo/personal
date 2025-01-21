@@ -12,6 +12,9 @@ import { CursorProvider } from "../context/CursorContext";
 export const metadata: Metadata = {
   title: "Junbeom Woo - Full Stack Developer",
   description: "Junbeom Woo's personal website",
+  icons: {
+    icon: "logo.png",
+  },
 };
 
 export default async function RootLayout({
