@@ -10,7 +10,7 @@ I have created a personal portfolio website with responsibe features for mobile,
 
 You can find there information about me including short introduction, my skills, academic credentials, and contact information.
 
-Moreover, in the portfolio section you can find imaginary online store I created as a personal project.
+Moreover, in the portfolio section, you can find various projects I created as personal projects.
 
 <br /> <br />
 ## Development Environment
