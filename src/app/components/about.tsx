@@ -97,11 +97,11 @@ export default function About() {
                 <div className="w-full">
                   {/* funtion About() */}
                   <div className="flex items-end">
-                  <h2 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-bold ">
+                  <h2 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-medium ">
                       function
                     </h2>
                     {firstSlideAnimation && (
-                      <h1 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] text-orange-500 dark:text-[#88ff69] font-monaco font-bold mt-10">
+                      <h1 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] text-orange-500 dark:text-[#88ff69] font-monaco font-medium mt-10">
                         <ShuffleText content={h("whoAmI")} />( ) {"{"}
                       </h1>
                     )}
@@ -184,11 +184,11 @@ export default function About() {
                 <div className="w-full xl:w-3/5">
                   {/* funtion Skills() */}
                   <div className="flex items-end">
-                  <h2 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-bold ">
+                  <h2 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-medium ">
                       function
                     </h2>
                     {secondSlideAnimation && (
-                      <h1 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] text-orange-500 dark:text-[#88ff69] font-monaco font-bold mt-10">
+                      <h1 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] text-orange-500 dark:text-[#88ff69] font-monaco font-medium mt-10">
                         <ShuffleText content={h("skills")} />( ) {"{"}
                       </h1>
                     )}
@@ -491,11 +491,11 @@ export default function About() {
                 <div>
                   {/* title */}
                   <div className="flex items-end">
-                  <h2 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-bold ">
+                  <h2 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-medium ">
                       function
                     </h2>
                     {thirdSlideAnimation && (
-                      <h1 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] text-orange-500 dark:text-[#88ff69] font-monaco font-bold mt-10">
+                      <h1 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] text-orange-500 dark:text-[#88ff69] font-monaco font-medium mt-10">
                         <ShuffleText content={h("education")} />( ) {"{"}
                       </h1>
                     )}

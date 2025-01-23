@@ -17,8 +17,8 @@ export default function MainContent() {
       <h1 className="text-[40px] sm:text-[62px] mb-2 sm:mb-4 font-medium leading-[60px]">JUNBEOM WOO</h1>
         <div className="flex">
           <ReactTyped
-            strings={locale === "en" ? ["Frontend Developer", "Backend Developer", "Fullstack Developer", "Web Designer"]:["Frontend Udvikler", "Backend Udvikler", "Fullstack Udvikler", "Web Designer"]}
-            typeSpeed={100}
+            strings={locale === "en" ? ["Frontend Developer", "Backend Developer", "Fullstack Developer"]:["Frontend Udvikler", "Backend Udvikler", "Fullstack Udvikler"]}
+            typeSpeed={80}
             className="flex text-[25px] sm:text-[40px] text-orange-500  dark:text-[#88ff69]"
             loop={true}
             showCursor={true}
