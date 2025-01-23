@@ -127,7 +127,7 @@ export default function About() {
                         Korea and continued my studies in a 6-month long
                         Full-Stack coding boot camp focused on foundational
                         knowledge in Web development.
-                        <br />I have moved to Denmark in late March 2024 and I
+                        <br />I recently moved to Denmark and I
                         am currently seeking employment in Copenhagen.
                       </h3>
                     ) : (
