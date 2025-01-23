@@ -10,6 +10,8 @@ I have created a personal portfolio website with responsibe features for mobile,
 
 You can find there information about me including short introduction, my skills, academic credentials, and contact information.
 
+It supports English and Danish, with both dark and light themes for an optimized user experience. 
+
 Moreover, in the portfolio section, you can find various projects I created as personal projects.
 
 <br /> <br />
