@@ -116,7 +116,7 @@ export default function About() {
                   >
                     {locale === "en" ? (
                       <h3 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] leading-[20px] sm:leading-[24px] xl:leading-[34px] overflow-y-auto">
-                        My name is Junbeom Woo and I am 26 years old.
+                        My name is Junbeom Woo and I am 27 years old.
                         <br />I have a bright and outgoing personality and I am
                         passionate about Web development.
                         <br />
@@ -132,7 +132,7 @@ export default function About() {
                       </h3>
                     ) : (
                       <h3 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] leading-[20px] sm:leading-[24px] xl:leading-[34px] overflow-y-auto">
-                        Mit navn er Junbeom Woo, og jeg er 26 år gammel.
+                        Mit navn er Junbeom Woo, og jeg er 27 år gammel.
                         <br />
                         Jeg har en lys og udadvendt personlighed, og jeg brænder
                         for webudvikling.
