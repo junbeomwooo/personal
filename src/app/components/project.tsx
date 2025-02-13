@@ -120,7 +120,7 @@ export default function Project() {
                     </div>
                     {/* period */}
                     <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-2 sm:mt-4 xl:mt-5 text-[#888888] dark:text-[#b4b4b4]">
-                      Jul 2024 - Present
+                      Sep 2024 - Present
                     </h2>
                     {/* Explanation */}
                     <h3 className="mt-2 sm:mt-4 xl:mt-5 text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] leading-[15px] sm:leading-[30px]">
