@@ -382,7 +382,7 @@ export default function Project() {
                       className="bg-none w-1/2 py-3 text-orange-500 font-medium border-2 border-solid border-orange-500 hover:no-underline hoverable hover:bg-orange-500 hover:text-white hover:dark:text-white dark:border-green-500 dark:text-green-500 hover:dark:bg-green-500 text-[13px] sm:text-base"
                       onClick={() =>
                         router.push(
-                          "http://ec2-3-73-1-218.eu-central-1.compute.amazonaws.com:3001/"
+                          "http://ec2-18-199-165-10.eu-central-1.compute.amazonaws.com:3001/"
                         )
                       }
                       initial={{ scale: 0 }}
