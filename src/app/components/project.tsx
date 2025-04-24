@@ -244,7 +244,7 @@ export default function Project() {
                     height={2000}
                     onClick={() =>
                       router.push(
-                        "http://ec2-3-73-1-218.eu-central-1.compute.amazonaws.com:3001/"
+                        "http://ec2-18-199-165-10.eu-central-1.compute.amazonaws.com:3001/"
                       )
                     }
                   />
