@@ -38,7 +38,7 @@ export default function Project() {
         {/* Box */}
         <div className="w-full h-auto scale-90 sm:scale-[80%] xl:scale-100">
           <div className="flex items-end px-6 ">
-          <h2 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-medium ">
+            <h2 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-medium ">
               function
             </h2>
             <h1 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] text-orange-500 dark:text-[#88ff69] font-monaco font-medium">
@@ -83,9 +83,7 @@ export default function Project() {
                     alt="Fotbold : Live Football Scores & Football Info"
                     width={3000}
                     height={2000}
-                    onClick={() =>
-                      window.alert("The website is not implemented yet.")
-                    }
+                    onClick={() => router.push("https://fodbold.vercel.app/en")}
                   />
                 </motion.div>
 
@@ -195,14 +193,14 @@ export default function Project() {
                     <motion.button
                       className="bg-none w-1/2 py-3 text-orange-500 font-medium border-2 border-solid border-orange-500 hover:no-underline hoverable hover:bg-orange-500 hover:text-white hover:dark:text-white dark:border-green-500 dark:text-green-500 hover:dark:bg-green-500 text-[13px] sm:text-base"
                       onClick={() =>
-                        window.alert("The website is not implemented yet.")
+                        router.push("https://fodbold.vercel.app/en")
                       }
                       initial={{ scale: 0 }}
                       animate={{ scale: title === "FOTBOLD" ? 1 : 0 }}
                       transition={{ duration: 0.5, ease: "easeInOut" }}
                       whileHover={{
                         scale: 1.05,
-                        transition: { duration: 0.2, ease: "easeInOut" }
+                        transition: { duration: 0.2, ease: "easeInOut" },
                       }}
                     >
                       Move to page
@@ -217,7 +215,7 @@ export default function Project() {
                       transition={{ duration: 0.5, ease: "easeInOut" }}
                       whileHover={{
                         scale: 1.05,
-                        transition: { duration: 0.2, ease: "easeInOut" }
+                        transition: { duration: 0.2, ease: "easeInOut" },
                       }}
                     >
                       View on Github
@@ -390,7 +388,7 @@ export default function Project() {
                       transition={{ duration: 0.5, ease: "easeInOut" }}
                       whileHover={{
                         scale: 1.05,
-                        transition: { duration: 0.2, ease: "easeInOut" }
+                        transition: { duration: 0.2, ease: "easeInOut" },
                       }}
                     >
                       Move to page
@@ -405,7 +403,7 @@ export default function Project() {
                       transition={{ duration: 0.5, ease: "easeInOut" }}
                       whileHover={{
                         scale: 1.05,
-                        transition: { duration: 0.2, ease: "easeInOut" }
+                        transition: { duration: 0.2, ease: "easeInOut" },
                       }}
                     >
                       View on Github
@@ -438,40 +436,40 @@ export default function Project() {
 
                 {/* explantion */}
                 <div className="w-full xl:w-1/2">
-                <motion.div
+                  <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: title === "NMP" ? 1 : 0 }}
                     transition={{ duration: 1, ease: "linear" }}
                   >
-                  <h1 className="text-[14px] sm:text-[17px] md:text-[20px] xl:text-[22px]  font-semibold leading-[18px] mt-4 sm:mt-6 xl:mt-0 md:leading-[30px]">
-                    NMP(Next Movie Project)
-                  </h1>
-                  <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-2 sm:mt-4 xl:mt-5 text-[#888888] dark:text-[#b4b4b4]">
-                    May 2024 - Jul 2024
-                  </h2>
-                  {locale === "en" ? (
-                    <h3 className="mt-2 sm:mt-4 xl:mt-5 text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] leading-[15px] sm:leading-[30px]">
-                      I developed a movie chart site named “NMP” as part of a
-                      mini-project to practice Next.js. The site showcases
-                      popular recent movies, offering detailed information about
-                      each movie. Additionally, it provides related YouTube
-                      videos and recommendations for similar movies.
-                    </h3>
-                  ) : (
-                    <h3 className="mt-2 sm:mt-4 xl:mt-5 text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] leading-[15px] sm:leading-[30px]">
-                      Jeg udviklede et filmsite kaldet “NMP” som en del af et
-                      mini-projekt for at øve mig i Next.js. Sitet præsenterer
-                      populære, aktuelle film og tilbyder detaljerede
-                      oplysninger om hver film. Derudover indeholder det
-                      relaterede YouTube-videoer og anbefalinger til lignende
-                      film.
-                    </h3>
-                  )}
+                    <h1 className="text-[14px] sm:text-[17px] md:text-[20px] xl:text-[22px]  font-semibold leading-[18px] mt-4 sm:mt-6 xl:mt-0 md:leading-[30px]">
+                      NMP(Next Movie Project)
+                    </h1>
+                    <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-2 sm:mt-4 xl:mt-5 text-[#888888] dark:text-[#b4b4b4]">
+                      May 2024 - Jul 2024
+                    </h2>
+                    {locale === "en" ? (
+                      <h3 className="mt-2 sm:mt-4 xl:mt-5 text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] leading-[15px] sm:leading-[30px]">
+                        I developed a movie chart site named “NMP” as part of a
+                        mini-project to practice Next.js. The site showcases
+                        popular recent movies, offering detailed information
+                        about each movie. Additionally, it provides related
+                        YouTube videos and recommendations for similar movies.
+                      </h3>
+                    ) : (
+                      <h3 className="mt-2 sm:mt-4 xl:mt-5 text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] leading-[15px] sm:leading-[30px]">
+                        Jeg udviklede et filmsite kaldet “NMP” som en del af et
+                        mini-projekt for at øve mig i Next.js. Sitet præsenterer
+                        populære, aktuelle film og tilbyder detaljerede
+                        oplysninger om hver film. Derudover indeholder det
+                        relaterede YouTube-videoer og anbefalinger til lignende
+                        film.
+                      </h3>
+                    )}
                   </motion.div>
 
                   {/* skills */}
                   <div className="flex gap-2 mt-4 sm:mt-6 flex-wrap">
-                  <motion.h1
+                    <motion.h1
                       className="px-1 sm:px-3 py-0.5 sm:py-1 bg-orange-500 dark:bg-green-600 text-[10px] sm:text-sm rounded-lg text-white font-semibold"
                       initial={{ scale: 0 }}
                       animate={{ scale: title === "NMP" ? 1 : 0 }}
@@ -532,7 +530,7 @@ export default function Project() {
                       transition={{ duration: 0.5, ease: "easeInOut" }}
                       whileHover={{
                         scale: 1.05,
-                        transition: { duration: 0.2, ease: "easeInOut" }
+                        transition: { duration: 0.2, ease: "easeInOut" },
                       }}
                     >
                       Move to page
@@ -549,7 +547,7 @@ export default function Project() {
                       transition={{ duration: 0.5, ease: "easeInOut" }}
                       whileHover={{
                         scale: 1.05,
-                        transition: { duration: 0.2, ease: "easeInOut" }
+                        transition: { duration: 0.2, ease: "easeInOut" },
                       }}
                     >
                       View on Github
