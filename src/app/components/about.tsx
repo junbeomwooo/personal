@@ -228,7 +228,7 @@ export default function About() {
                     {/* React & Next.js */}
                     <div>
                       <div className="flex justify-between mt-4">
-                        <h3>REACT & NEXT.JS</h3>
+                        <h3>REACT(NEXT.JS) & REACT NATIVE</h3>
                         <h3 className="text-sm font-normal">90</h3>
                       </div>
                       <motion.div
@@ -270,7 +270,7 @@ export default function About() {
                     {/* ADOBE ILLUSTRATOR & PHOTOSHOP*/}
                     <div>
                       <div className="flex justify-between mt-4">
-                        <h3>Adobe Illustrator & PhotoShop</h3>
+                        <h3>ADOBE ILLUSTRATOR & PHOTOSHOP</h3>
                         <h3 className="text-sm font-normal">80</h3>
                       </div>
                       <motion.div
