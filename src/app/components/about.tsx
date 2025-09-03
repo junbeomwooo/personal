@@ -29,8 +29,8 @@ import { RiNextjsFill } from "react-icons/ri";
 import { FaNodeJs } from "react-icons/fa";
 import { SiExpress } from "react-icons/si";
 import { DiMysql } from "react-icons/di";
-import { SiAdobeillustrator } from "react-icons/si";
-import { SiAdobephotoshop } from "react-icons/si";
+import { SiAdobe } from "react-icons/si";
+import { FaFigma } from "react-icons/fa";
 
 export default function About() {
   const locale = useLocale();
@@ -270,7 +270,7 @@ export default function About() {
                     {/* ADOBE ILLUSTRATOR & PHOTOSHOP*/}
                     <div>
                       <div className="flex justify-between mt-4">
-                        <h3>ADOBE ILLUSTRATOR & PHOTOSHOP</h3>
+                        <h3>DESIGN TOOLS (ADOBE AI / PS & FIGMA)</h3>
                         <h3 className="text-sm font-normal">80</h3>
                       </div>
                       <motion.div
@@ -297,6 +297,7 @@ export default function About() {
                       </motion.h3>
                     </div>
                   </div>
+
                   {/* skills icon */}
                   <div className="mt-4 gap-4 flex-wrap hidden sm:flex  opacity-60">
                     {/* html */}
@@ -369,10 +370,10 @@ export default function About() {
                       <SiTypescript className="w-[20px] h-[20px] text-white dark:text-black" />
                     </motion.button>
 
-                    {/* React */}
+                    {/* React & Rn */}
                     <motion.button
                       className="bg-orange-500 w-[40px] h-[40px] rounded-full flex items-center justify-center dark:bg-[#88ff69] hoverable2"
-                      data-name="REACT"
+                      data-name="REACT & RN"
                       initial={{ opacity: 0, y: "-35%" }}
                       animate={{
                         opacity: secondSlideAnimation ? 1 : 0,
@@ -439,10 +440,10 @@ export default function About() {
                       <DiMysql className="w-[25px] h-[25px] text-white dark:text-black" />
                     </motion.button>
 
-                    {/* Illustrator */}
+                    {/* AI & PS */}
                     <motion.button
                       className="bg-orange-500 w-[40px] h-[40px] rounded-full flex items-center justify-center dark:bg-[#88ff69] hoverable2"
-                      data-name="ILLUSTRATOR"
+                      data-name="ADOBE AI & PS"
                       initial={{ opacity: 0, y: "-35%" }}
                       animate={{
                         opacity: secondSlideAnimation ? 1 : 0,
@@ -450,13 +451,14 @@ export default function About() {
                       }}
                       transition={{ duration: 2.6, ease: "easeInOut" }}
                     >
-                      <SiAdobeillustrator className="w-[20px] h-[20px] text-white dark:text-black" />
+                      <SiAdobe className="w-[20px] h-[20px] text-white dark:text-black" />
                     </motion.button>
 
-                    {/* PhotoShop */}
+
+                    {/* Figma */}
                     <motion.button
                       className="bg-orange-500 w-[40px] h-[40px] rounded-full flex items-center justify-center dark:bg-[#88ff69] hoverable2"
-                      data-name="PHOTOSHOP"
+                      data-name="FIGMA"
                       initial={{ opacity: 0, y: "-35%" }}
                       animate={{
                         opacity: secondSlideAnimation ? 1 : 0,
@@ -464,7 +466,7 @@ export default function About() {
                       }}
                       transition={{ duration: 2.8, ease: "easeInOut" }}
                     >
-                      <SiAdobephotoshop className="w-[20px] h-[20px] text-white dark:text-black" />
+                      <FaFigma className="w-[20px] h-[20px] text-white dark:text-black" />
                     </motion.button>
                   </div>
 

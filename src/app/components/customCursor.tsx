@@ -12,19 +12,19 @@ import { RiNextjsFill } from "react-icons/ri";
 import { FaNodeJs } from "react-icons/fa";
 import { SiExpress } from "react-icons/si";
 import { DiMysql } from "react-icons/di";
-import { SiAdobeillustrator } from "react-icons/si";
-import { SiAdobephotoshop } from "react-icons/si";
+import { SiAdobe } from "react-icons/si";
+import { FaFigma } from "react-icons/fa";
+
 import { useContextCursor } from "../context/CursorContext";
 
 export default function CustomCursor() {
-  
   /** for hovering */
 
   // 커서 참조
   const cursorRef = useRef<HTMLDivElement | null>(null);
 
-  // define gloable context value 
-  const {isHovering, setIsHovering} = useContextCursor();
+  // define gloable context value
+  const { isHovering, setIsHovering } = useContextCursor();
 
   /** for magnifying */
 
@@ -88,7 +88,7 @@ export default function CustomCursor() {
                 <SiTypescript className="text-white dark:text-black  w-[10px] h-[10px]" />
               );
               break;
-            case "REACT":
+            case "REACT & RN":
               setCursorIcon(
                 <FaReact className="text-white dark:text-black  w-[10px] h-[10px]" />
               );
@@ -113,16 +113,18 @@ export default function CustomCursor() {
                 <DiMysql className="text-white dark:text-black  w-[10px] h-[10px]" />
               );
               break;
-            case "ILLUSTRATOR":
+            case "ADOBE AI & PS":
               setCursorIcon(
-                <SiAdobeillustrator className="text-white dark:text-black  w-[10px] h-[10px]" />
+                <SiAdobe className="text-white dark:text-black  w-[10px] h-[10px]" />
               );
               break;
-            case "PHOTOSHOP":
+
+            case "FIGMA":
               setCursorIcon(
-                <SiAdobephotoshop className="text-white dark:text-black  w-[10px] h-[10px]" />
+                <FaFigma className="text-white dark:text-black  w-[10px] h-[10px]" />
               );
               break;
+
             default:
               setCursorIcon(null); // 기본값은 아이콘을 비우거나 처리
               break;
