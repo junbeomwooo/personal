@@ -519,7 +519,7 @@ export default function About() {
                       </h1>
                       <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-4 xl:mt-5  text-[#888888] dark:text-[#b4b4b4]">
                         {locale === "en"
-                          ? "August 2022 - January - 2023 (920hr / 115days)"
+                          ? "August 2022 - January 2023 (920hr / 115days)"
                           : "August 2022 - Januar 2023 (920 timer / 115 dage)"}
                       </h2>
                       {/* courses */}
