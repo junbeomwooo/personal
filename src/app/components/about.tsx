@@ -117,7 +117,7 @@ export default function About() {
                     {locale === "en" ? (
                       <h3 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] leading-[20px] sm:leading-[24px] xl:leading-[34px] overflow-y-auto">
                         My name is Junbeom Woo and I am 27 years old, and I was
-                        born in South Korea
+                        born in South Korea.
                         <br />I have a bright and outgoing personality and I am
                         passionate about Web development.
                         <br />I recently moved to Denmark with a residence
