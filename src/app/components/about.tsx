@@ -97,7 +97,7 @@ export default function About() {
                 <div className="w-full">
                   {/* funtion About() */}
                   <div className="flex items-end">
-                  <h2 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-medium ">
+                    <h2 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-medium ">
                       function
                     </h2>
                     {firstSlideAnimation && (
@@ -116,37 +116,30 @@ export default function About() {
                   >
                     {locale === "en" ? (
                       <h3 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] leading-[20px] sm:leading-[24px] xl:leading-[34px] overflow-y-auto">
-                        My name is Junbeom Woo and I am 27 years old.
+                        My name is Junbeom Woo and I am 27 years old, and I was
+                        born in South Korea
                         <br />I have a bright and outgoing personality and I am
                         passionate about Web development.
-                        <br />
-                        I hold a residence permit under the EU regulations.
-                        <br />
-                        <br />
-                        I obtained a Bachelor’s degree in Visual Design in South
-                        Korea and continued my studies in a 6-month long
-                        Full-Stack coding boot camp focused on foundational
-                        knowledge in Web development.
-                        <br />I recently moved to Denmark and I
-                        am currently seeking employment in Copenhagen.
+                        <br />I recently moved to Denmark with a residence
+                        permit under the EU regulations and I am currently
+                        seeking employment in Copenhagen. <br />I am working as
+                        a frontend intern, contributing to both UI/UX design and
+                        mobile frontend development.
                       </h3>
                     ) : (
                       <h3 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] leading-[20px] sm:leading-[24px] xl:leading-[34px] overflow-y-auto">
-                        Mit navn er Junbeom Woo, og jeg er 27 år gammel.
+                        Mit navn er Junbeom Woo, jeg er 27 år gammel, og jeg er
+                        født i Sydkorea.
                         <br />
                         Jeg har en lys og udadvendt personlighed, og jeg brænder
                         for webudvikling.
                         <br />
-                        Jeg har en opholdstilladelse under EU-reglerne.
+                        Jeg er for nylig flyttet til Danmark med en
+                        opholdstilladelse under EU-reglerne, og jeg søger i
+                        øjeblikket arbejde i København.
                         <br />
-                        <br />
-                        Jeg har opnået en bachelorgrad i visuel design i
-                        Sydkorea og fortsatte mine studier på et 6-måneders
-                        Full-Stack kode-bootcamp med fokus på grundlæggende
-                        viden om webudvikling.
-                        <br />
-                        Jeg flyttede til Danmark i slutningen af marts 2024, og
-                        jeg søger i øjeblikket arbejde i København.
+                        Jeg arbejder som frontend-praktikant og bidrager til
+                        både UI/UX-design og mobil frontend-udvikling.
                       </h3>
                     )}
                   </motion.div>
@@ -184,7 +177,7 @@ export default function About() {
                 <div className="w-full xl:w-3/5">
                   {/* funtion Skills() */}
                   <div className="flex items-end">
-                  <h2 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-medium ">
+                    <h2 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-medium ">
                       function
                     </h2>
                     {secondSlideAnimation && (
@@ -454,7 +447,6 @@ export default function About() {
                       <SiAdobe className="w-[20px] h-[20px] text-white dark:text-black" />
                     </motion.button>
 
-
                     {/* Figma */}
                     <motion.button
                       className="bg-orange-500 w-[40px] h-[40px] rounded-full flex items-center justify-center dark:bg-[#88ff69] hoverable2"
@@ -493,7 +485,7 @@ export default function About() {
                 <div>
                   {/* title */}
                   <div className="flex items-end">
-                  <h2 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-medium ">
+                    <h2 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-medium ">
                       function
                     </h2>
                     {thirdSlideAnimation && (
