@@ -87,7 +87,7 @@ export default function Project() {
                     height={2000}
                     onClick={() =>
                       router.push(
-                        "https://expo.dev/preview/update?message=Publishing+Weather+Application&updateRuntimeVersion=1.0.0&createdAt=2025-09-02T00%3A26%3A36.713Z&slug=exp&projectId=bf7b74cf-6294-437a-b78e-c98a17564095&group=79b26f1c-aa42-417c-95b3-12ace4a547cf"
+                        "https://expo.dev/preview/update?message=Updated+SDK+version&updateRuntimeVersion=1.0.0&createdAt=2025-09-25T02%3A04%3A02.419Z&slug=exp&projectId=6f675562-3774-497c-a70b-cf462f425e87&group=a50a545f-0c14-49c2-84db-0133895faa4c"
                       )
                     }
                   />
@@ -200,7 +200,7 @@ export default function Project() {
                       className="bg-none w-1/2 py-3 text-orange-500 font-medium border-2 border-solid border-orange-500 hover:no-underline hoverable hover:bg-orange-500 hover:text-white hover:dark:text-white dark:border-green-500 dark:text-green-500 hover:dark:bg-green-500 text-[13px] sm:text-base"
                       onClick={() =>
                         router.push(
-                          "https://expo.dev/preview/update?message=Publishing+Weather+Application&updateRuntimeVersion=1.0.0&createdAt=2025-09-02T00%3A26%3A36.713Z&slug=exp&projectId=bf7b74cf-6294-437a-b78e-c98a17564095&group=79b26f1c-aa42-417c-95b3-12ace4a547cf"
+                          "https://expo.dev/preview/update?message=Updated+SDK+version&updateRuntimeVersion=1.0.0&createdAt=2025-09-25T02%3A04%3A02.419Z&slug=exp&projectId=6f675562-3774-497c-a70b-cf462f425e87&group=a50a545f-0c14-49c2-84db-0133895faa4c"
                         )
                       }
                       initial={{ scale: 0 }}
