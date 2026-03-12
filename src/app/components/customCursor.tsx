@@ -65,63 +65,63 @@ export default function CustomCursor() {
           switch (e.target.getAttribute("data-name")) {
             case "HTML":
               setCursorIcon(
-                <FaHtml5 className="text-white dark:text-black w-[10px] h-[10px]" />
+                <FaHtml5 className="text-white dark:text-black w-[10px] h-[10px]" />,
               );
               break;
             case "CSS":
               setCursorIcon(
-                <FaCss3Alt className="text-white dark:text-black  w-[10px] h-[10px]" />
+                <FaCss3Alt className="text-white dark:text-black  w-[10px] h-[10px]" />,
               );
               break;
             case "TAILWIND":
               setCursorIcon(
-                <RiTailwindCssFill className="text-white dark:text-black  w-[10px] h-[10px]" />
+                <RiTailwindCssFill className="text-white dark:text-black  w-[10px] h-[10px]" />,
               );
               break;
             case "JS":
               setCursorIcon(
-                <FaJs className="text-white dark:text-black  w-[10px] h-[10px]" />
+                <FaJs className="text-white dark:text-black  w-[10px] h-[10px]" />,
               );
               break;
             case "TS":
               setCursorIcon(
-                <SiTypescript className="text-white dark:text-black  w-[10px] h-[10px]" />
+                <SiTypescript className="text-white dark:text-black  w-[10px] h-[10px]" />,
               );
               break;
             case "REACT & RN":
               setCursorIcon(
-                <FaReact className="text-white dark:text-black  w-[10px] h-[10px]" />
+                <FaReact className="text-white dark:text-black  w-[10px] h-[10px]" />,
               );
               break;
             case "NEXT":
               setCursorIcon(
-                <RiNextjsFill className="text-white dark:text-black  w-[10px] h-[10px]" />
+                <RiNextjsFill className="text-white dark:text-black  w-[10px] h-[10px]" />,
               );
               break;
             case "NODE":
               setCursorIcon(
-                <FaNodeJs className="text-white dark:text-black  w-[10px] h-[10px]" />
+                <FaNodeJs className="text-white dark:text-black  w-[10px] h-[10px]" />,
               );
               break;
             case "EXPRESS":
               setCursorIcon(
-                <SiExpress className="text-white dark:text-black  w-[10px] h-[10px]" />
+                <SiExpress className="text-white dark:text-black  w-[10px] h-[10px]" />,
               );
               break;
             case "MYSQL":
               setCursorIcon(
-                <DiMysql className="text-white dark:text-black  w-[10px] h-[10px]" />
+                <DiMysql className="text-white dark:text-black  w-[10px] h-[10px]" />,
               );
               break;
             case "ADOBE AI & PS":
               setCursorIcon(
-                <SiAdobe className="text-white dark:text-black  w-[10px] h-[10px]" />
+                <SiAdobe className="text-white dark:text-black  w-[10px] h-[10px]" />,
               );
               break;
 
             case "FIGMA":
               setCursorIcon(
-                <FaFigma className="text-white dark:text-black  w-[10px] h-[10px]" />
+                <FaFigma className="text-white dark:text-black  w-[10px] h-[10px]" />,
               );
               break;
 

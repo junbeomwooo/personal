@@ -9,14 +9,19 @@ export default function Loading() {
   const currentTheme = theme === "system" ? systemTheme : theme;
 
   return (
-    <div style={{
-      width: '100%',
-      height: '900px',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center'
-    }}>
-      <RingLoader color={currentTheme === "dark" ? "white" : "black"} size={100} />
+    <div
+      style={{
+        width: "100%",
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <RingLoader
+        color={currentTheme === "dark" ? "white" : "black"}
+        size={100}
+      />
     </div>
   );
 }

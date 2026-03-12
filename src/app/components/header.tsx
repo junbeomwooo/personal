@@ -19,7 +19,6 @@ import { FaCode } from "react-icons/fa6";
 import { PiReadCvLogo } from "react-icons/pi";
 import { IoMdContact } from "react-icons/io";
 
-
 export default function Header() {
   const router = useRouter();
 
@@ -234,200 +233,207 @@ export default function Header() {
               transition={{ duration: 0.2, ease: "linear" }}
             />
             <div className="absolute pt-24 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-            <div className="flex items-center justify-center w-full gap-10 max-sm:gap-4">
-              {/* home */}
-              <motion.div
-                className={`w-[190px] h-[190px] border-4 border-solid border-[#ffffff] z-30 relative text-center hoverable max-sm:w-[100px] max-sm:h-[100px] max-sm:border-4 ${
-                  pathname === "/en" || pathname === "/da"
-                    ? "bg-[#F97316] dark:bg-[#00ce59] border-none"
-                    : ""
-                }`}
-                initial={{ scale: 0, opacity: "0%" }}
-                animate={{ scale: 1, opacity: "100%" }}
-                exit={{ scale: 0, opacity: "0%" }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                whileHover={{
-                  backgroundColor:
-                    currentTheme === "light" ? "#F97316" : "#00ce59",
-                  borderColor: currentTheme === "light" ? "#F97316" : "#00ce59",
-                  transition: { duration: 0.2, ease: "linear" },
-                }}
-                onClick={() => {
-                  router.push("/");
-                  setIsMenuOpen(false);
-                }}
-              >
-                <div className="mt-[53px] hoverable max-sm:mt-[0px]">
-                  {pathname === "/en" || pathname === "/da" ? (
-                    <MdHomeFilled className="w-[90px] h-[90px] m-auto max-sm:w-[50px] max-sm:mt-[5px]" />
-                  ) : (
-                    <>
-                      {" "}
-                      <h3 className="text-[55px] font-bold hoverable max-sm:text-[30px] max-sm:mt-[25px]">
-                        Ho
-                      </h3>
-                      <h5 className="text-[22px] hoverable max-sm:text-[15px]">
-                        {h("home")}
-                      </h5>
-                    </>
-                  )}
-                </div>
-              </motion.div>
-              {/* about */}
-              <motion.div
-                className={`w-[190px] h-[190px] border-4 border-solid border-[#ffffff] z-30 relative text-center hoverable max-sm:w-[100px] max-sm:h-[100px] max-sm:border-4 ${
-                  pathname === "/en/about" || pathname === "/da/about"
-                    ? "bg-[#F97316] dark:bg-[#00ce59] border-none"
-                    : ""
-                }`}
-                initial={{ scale: 0, opacity: "0%" }}
-                animate={{ scale: 1, opacity: "100%" }}
-                exit={{ scale: 0, opacity: "0%" }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                whileHover={{
-                  backgroundColor:
-                    currentTheme === "light" ? "#F97316" : "#00ce59",
-                  borderColor: currentTheme === "light" ? "#F97316" : "#00ce59",
-                  transition: { duration: 0.2, ease: "linear" },
-                }}
-                onClick={() => {
-                  router.push(`/${locale}/about`);
-                  setIsMenuOpen(false);
-                }}
-              >
-                <div className="mt-[53px] hoverable max-sm:mt-[0px]">
-                  {pathname === "/en/about" || pathname === "/da/about" ? (
-                    <IoIosInformationCircleOutline className="w-[90px] h-[90px] m-auto max-sm:w-[50px] max-sm:mt-[5px]" />
-                  ) : (
-                    <>
-                      {" "}
-                      <h3 className="text-[55px] font-bold hoverable max-sm:text-[30px] max-sm:mt-[25px]">
-                        Ab
-                      </h3>
-                      <h5 className="text-[22px] hoverable max-sm:text-[15px]">
-                        {h("about")}
-                      </h5>
-                    </>
-                  )}
-                </div>
-              </motion.div>
-              {/* project */}
-              <motion.div
-                className={`w-[190px] h-[190px] border-4 border-solid border-[#ffffff] z-30 relative text-center hoverable max-sm:w-[100px] max-sm:h-[100px] max-sm:border-4 ${
-                  pathname === "/en/project" || pathname === "/da/project"
-                    ? "bg-[#F97316] dark:bg-[#00ce59] border-none"
-                    : ""
-                }`}
-                initial={{ scale: 0, opacity: "0%" }}
-                animate={{ scale: 1, opacity: "100%" }}
-                exit={{ scale: 0, opacity: "0%" }}
-                transition={{ duration: 0.1, ease: "easeInOut" }}
-                whileHover={{
-                  backgroundColor:
-                    currentTheme === "light" ? "#F97316" : "#00ce59",
-                  borderColor: currentTheme === "light" ? "#F97316" : "#00ce59",
-                  transition: { duration: 0.2, ease: "linear" },
-                }}
-                onClick={() => {
-                  router.push(`/${locale}/project`);
-                  setIsMenuOpen(false);
-                }}
-              >
-                <div className="mt-[53px] hoverable max-sm:mt-[0px]">
-                  {pathname === "/en/project" || pathname === "/da/project" ? (
-                    <FaCode className="w-[90px] h-[90px] m-auto max-sm:w-[50px] max-sm:mt-[5px]" />
-                  ) : (
-                    <>
-                      {" "}
-                      <h3 className="text-[55px] font-bold hoverable max-sm:text-[30px] max-sm:mt-[25px]">
-                        Pr
-                      </h3>
-                      <h5 className="text-[22px] hoverable max-sm:text-[15px]">
-                        {h("project")}
-                      </h5>
-                    </>
-                  )}
-                </div>
-              </motion.div>
-            </div>
-            <div className="flex items-center justify-center w-full mt-10 gap-10 max-sm:gap-4">
-              {/* resume */}
-              <motion.div
-                className={`w-[190px] h-[190px] border-4 border-solid border-[#ffffff] z-30 relative text-center hoverable max-sm:w-[100px] max-sm:h-[100px] max-sm:border-4 ${
-                  pathname === "/en/resume" || pathname === "/da/resume"
-                    ? "bg-[#F97316] dark:bg-[#00ce59] border-none"
-                    : ""
-                }`}
-                initial={{ scale: 0, opacity: "0%" }}
-                animate={{ scale: 1, opacity: "100%" }}
-                exit={{ scale: 0, opacity: "0%" }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                whileHover={{
-                  backgroundColor:
-                    currentTheme === "light" ? "#F97316" : "#00ce59",
-                  borderColor: currentTheme === "light" ? "#F97316" : "#00ce59",
-                  transition: { duration: 0.2, ease: "linear" },
-                }}
-                onClick={() => {
-                  window.open('/resume.pdf','_blank');
-                  setIsMenuOpen(false);
-                }}
-              >
-                <div className="mt-[53px] hoverable max-sm:mt-[0px]">
-                  {pathname === "/en/resume" || pathname === "/da/resume" ? (
-                    <PiReadCvLogo className="w-[90px] h-[90px] m-auto max-sm:w-[50px] max-sm:mt-[5px]" />
-                  ) : (
-                    <>
-                      {" "}
-                      <h3 className="text-[55px] font-bold hoverable max-sm:text-[30px] max-sm:mt-[25px]">
-                        Re
-                      </h3>
-                      <h5 className="text-[22px] hoverable max-sm:text-[15px]">
-                        {h("resume")}
-                      </h5>
-                    </>
-                  )}
-                </div>
-              </motion.div>
-              {/* contact */}
-              <motion.div
-                className={`w-[190px] h-[190px] border-4 border-solid border-[#ffffff] z-30 relative text-center hoverable max-sm:w-[100px] max-sm:h-[100px] max-sm:border-4 ${
-                  pathname === "/en/contact" || pathname === "/da/contact"
-                    ? "bg-[#F97316] dark:bg-[#00ce59] border-none"
-                    : ""
-                }`}
-                initial={{ scale: 0, opacity: "0%" }}
-                animate={{ scale: 1, opacity: "100%" }}
-                exit={{ scale: 0, opacity: "0%" }}
-                transition={{ duration: 0., ease: "easeInOut" }}
-                whileHover={{
-                  backgroundColor:
-                    currentTheme === "light" ? "#F97316" : "#00ce59",
-                  borderColor: currentTheme === "light" ? "#F97316" : "#00ce59",
-                  transition: { duration: 0.2, ease: "linear" },
-                }}
-                onClick={() => {
-                  router.push(`/${locale}/contact`);
-                  setIsMenuOpen(false);
-                }}
-              >
-                <div className="mt-[53px] hoverable max-sm:mt-[0px]">
-                  {pathname === "/en/contact" || pathname === "/da/contact" ? (
-                    <IoMdContact className="w-[90px] h-[90px] m-auto max-sm:w-[50px] max-sm:mt-[5px]" />
-                  ) : (
-                    <>
-                      {" "}
-                      <h3 className="text-[55px] font-bold hoverable max-sm:text-[30px] max-sm:mt-[25px]">
-                        Co
-                      </h3>
-                      <h5 className="text-[22px] hoverable max-sm:text-[15px]">
-                        {h("contact")}
-                      </h5>
-                    </>
-                  )}
-                </div>
-              </motion.div>
-            </div>
+              <div className="flex items-center justify-center w-full gap-10 max-sm:gap-4">
+                {/* home */}
+                <motion.div
+                  className={`w-[190px] h-[190px] border-4 border-solid border-[#ffffff] z-30 relative text-center hoverable max-sm:w-[100px] max-sm:h-[100px] max-sm:border-4 ${
+                    pathname === "/en" || pathname === "/da"
+                      ? "bg-[#F97316] dark:bg-[#00ce59] border-none"
+                      : ""
+                  }`}
+                  initial={{ scale: 0, opacity: "0%" }}
+                  animate={{ scale: 1, opacity: "100%" }}
+                  exit={{ scale: 0, opacity: "0%" }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  whileHover={{
+                    backgroundColor:
+                      currentTheme === "light" ? "#F97316" : "#00ce59",
+                    borderColor:
+                      currentTheme === "light" ? "#F97316" : "#00ce59",
+                    transition: { duration: 0.2, ease: "linear" },
+                  }}
+                  onClick={() => {
+                    router.push("/");
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  <div className="mt-[53px] hoverable max-sm:mt-[0px]">
+                    {pathname === "/en" || pathname === "/da" ? (
+                      <MdHomeFilled className="w-[90px] h-[90px] m-auto max-sm:w-[50px] max-sm:mt-[5px]" />
+                    ) : (
+                      <>
+                        {" "}
+                        <h3 className="text-[55px] font-bold hoverable max-sm:text-[30px] max-sm:mt-[25px]">
+                          Ho
+                        </h3>
+                        <h5 className="text-[22px] hoverable max-sm:text-[15px]">
+                          {h("home")}
+                        </h5>
+                      </>
+                    )}
+                  </div>
+                </motion.div>
+                {/* about */}
+                <motion.div
+                  className={`w-[190px] h-[190px] border-4 border-solid border-[#ffffff] z-30 relative text-center hoverable max-sm:w-[100px] max-sm:h-[100px] max-sm:border-4 ${
+                    pathname === "/en/about" || pathname === "/da/about"
+                      ? "bg-[#F97316] dark:bg-[#00ce59] border-none"
+                      : ""
+                  }`}
+                  initial={{ scale: 0, opacity: "0%" }}
+                  animate={{ scale: 1, opacity: "100%" }}
+                  exit={{ scale: 0, opacity: "0%" }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  whileHover={{
+                    backgroundColor:
+                      currentTheme === "light" ? "#F97316" : "#00ce59",
+                    borderColor:
+                      currentTheme === "light" ? "#F97316" : "#00ce59",
+                    transition: { duration: 0.2, ease: "linear" },
+                  }}
+                  onClick={() => {
+                    router.push(`/${locale}/about`);
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  <div className="mt-[53px] hoverable max-sm:mt-[0px]">
+                    {pathname === "/en/about" || pathname === "/da/about" ? (
+                      <IoIosInformationCircleOutline className="w-[90px] h-[90px] m-auto max-sm:w-[50px] max-sm:mt-[5px]" />
+                    ) : (
+                      <>
+                        {" "}
+                        <h3 className="text-[55px] font-bold hoverable max-sm:text-[30px] max-sm:mt-[25px]">
+                          Ab
+                        </h3>
+                        <h5 className="text-[22px] hoverable max-sm:text-[15px]">
+                          {h("about")}
+                        </h5>
+                      </>
+                    )}
+                  </div>
+                </motion.div>
+                {/* project */}
+                <motion.div
+                  className={`w-[190px] h-[190px] border-4 border-solid border-[#ffffff] z-30 relative text-center hoverable max-sm:w-[100px] max-sm:h-[100px] max-sm:border-4 ${
+                    pathname === "/en/project" || pathname === "/da/project"
+                      ? "bg-[#F97316] dark:bg-[#00ce59] border-none"
+                      : ""
+                  }`}
+                  initial={{ scale: 0, opacity: "0%" }}
+                  animate={{ scale: 1, opacity: "100%" }}
+                  exit={{ scale: 0, opacity: "0%" }}
+                  transition={{ duration: 0.1, ease: "easeInOut" }}
+                  whileHover={{
+                    backgroundColor:
+                      currentTheme === "light" ? "#F97316" : "#00ce59",
+                    borderColor:
+                      currentTheme === "light" ? "#F97316" : "#00ce59",
+                    transition: { duration: 0.2, ease: "linear" },
+                  }}
+                  onClick={() => {
+                    router.push(`/${locale}/project`);
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  <div className="mt-[53px] hoverable max-sm:mt-[0px]">
+                    {pathname === "/en/project" ||
+                    pathname === "/da/project" ? (
+                      <FaCode className="w-[90px] h-[90px] m-auto max-sm:w-[50px] max-sm:mt-[5px]" />
+                    ) : (
+                      <>
+                        {" "}
+                        <h3 className="text-[55px] font-bold hoverable max-sm:text-[30px] max-sm:mt-[25px]">
+                          Pr
+                        </h3>
+                        <h5 className="text-[22px] hoverable max-sm:text-[15px]">
+                          {h("project")}
+                        </h5>
+                      </>
+                    )}
+                  </div>
+                </motion.div>
+              </div>
+              <div className="flex items-center justify-center w-full mt-10 gap-10 max-sm:gap-4">
+                {/* resume */}
+                <motion.div
+                  className={`w-[190px] h-[190px] border-4 border-solid border-[#ffffff] z-30 relative text-center hoverable max-sm:w-[100px] max-sm:h-[100px] max-sm:border-4 ${
+                    pathname === "/en/resume" || pathname === "/da/resume"
+                      ? "bg-[#F97316] dark:bg-[#00ce59] border-none"
+                      : ""
+                  }`}
+                  initial={{ scale: 0, opacity: "0%" }}
+                  animate={{ scale: 1, opacity: "100%" }}
+                  exit={{ scale: 0, opacity: "0%" }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  whileHover={{
+                    backgroundColor:
+                      currentTheme === "light" ? "#F97316" : "#00ce59",
+                    borderColor:
+                      currentTheme === "light" ? "#F97316" : "#00ce59",
+                    transition: { duration: 0.2, ease: "linear" },
+                  }}
+                  onClick={() => {
+                    window.open("/CV.pdf", "_blank");
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  <div className="mt-[53px] hoverable max-sm:mt-[0px]">
+                    {pathname === "/en/resume" || pathname === "/da/resume" ? (
+                      <PiReadCvLogo className="w-[90px] h-[90px] m-auto max-sm:w-[50px] max-sm:mt-[5px]" />
+                    ) : (
+                      <>
+                        {" "}
+                        <h3 className="text-[55px] font-bold hoverable max-sm:text-[30px] max-sm:mt-[25px]">
+                          Re
+                        </h3>
+                        <h5 className="text-[22px] hoverable max-sm:text-[15px]">
+                          {h("resume")}
+                        </h5>
+                      </>
+                    )}
+                  </div>
+                </motion.div>
+                {/* contact */}
+                <motion.div
+                  className={`w-[190px] h-[190px] border-4 border-solid border-[#ffffff] z-30 relative text-center hoverable max-sm:w-[100px] max-sm:h-[100px] max-sm:border-4 ${
+                    pathname === "/en/contact" || pathname === "/da/contact"
+                      ? "bg-[#F97316] dark:bg-[#00ce59] border-none"
+                      : ""
+                  }`}
+                  initial={{ scale: 0, opacity: "0%" }}
+                  animate={{ scale: 1, opacity: "100%" }}
+                  exit={{ scale: 0, opacity: "0%" }}
+                  transition={{ duration: 0, ease: "easeInOut" }}
+                  whileHover={{
+                    backgroundColor:
+                      currentTheme === "light" ? "#F97316" : "#00ce59",
+                    borderColor:
+                      currentTheme === "light" ? "#F97316" : "#00ce59",
+                    transition: { duration: 0.2, ease: "linear" },
+                  }}
+                  onClick={() => {
+                    router.push(`/${locale}/contact`);
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  <div className="mt-[53px] hoverable max-sm:mt-[0px]">
+                    {pathname === "/en/contact" ||
+                    pathname === "/da/contact" ? (
+                      <IoMdContact className="w-[90px] h-[90px] m-auto max-sm:w-[50px] max-sm:mt-[5px]" />
+                    ) : (
+                      <>
+                        {" "}
+                        <h3 className="text-[55px] font-bold hoverable max-sm:text-[30px] max-sm:mt-[25px]">
+                          Co
+                        </h3>
+                        <h5 className="text-[22px] hoverable max-sm:text-[15px]">
+                          {h("contact")}
+                        </h5>
+                      </>
+                    )}
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </div>
         )}

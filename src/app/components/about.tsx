@@ -26,11 +26,15 @@ import { FaJs } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
+import { SiFlutter } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import { SiExpress } from "react-icons/si";
 import { DiMysql } from "react-icons/di";
+import { FaGithub } from "react-icons/fa6";
 import { SiAdobe } from "react-icons/si";
 import { FaFigma } from "react-icons/fa";
+import { IconType } from "react-icons";
+import { FaDocker } from "react-icons/fa";
 
 export default function About() {
   const locale = useLocale();
@@ -38,24 +42,111 @@ export default function About() {
   const [firstSlideAnimation, setFirstSlideAnimation] = useState(true);
   const [secondSlideAnimation, setSecondSlideAnimation] = useState(false);
   const [thirdSlideAnimation, setThirdSlideAnimation] = useState(false);
+  const [forthSlideAnimation, setforthSlideAnimation] = useState(false);
 
   const handleSlideChange = (e: SwiperType) => {
     if (e.activeIndex === 0) {
       setFirstSlideAnimation(true);
       setSecondSlideAnimation(false);
       setThirdSlideAnimation(false);
+      setforthSlideAnimation(false);
     } else if (e.activeIndex === 1) {
       setFirstSlideAnimation(false);
       setSecondSlideAnimation(true);
       setThirdSlideAnimation(false);
+      setforthSlideAnimation(false);
     } else if (e.activeIndex === 2) {
       setFirstSlideAnimation(false);
       setSecondSlideAnimation(false);
       setThirdSlideAnimation(true);
+      setforthSlideAnimation(false);
+    } else if (e.activeIndex === 3) {
+      setFirstSlideAnimation(false);
+      setSecondSlideAnimation(false);
+      setThirdSlideAnimation(false);
+      setforthSlideAnimation(true);
     }
   };
 
   const h = useTranslations("HomePage");
+
+  const hoverSkills = [
+    { name: "HTML", icon: FaHtml5 },
+    { name: "CSS", icon: FaCss3Alt },
+    { name: "TAILWIND", icon: RiTailwindCssFill },
+    { name: "JS", icon: FaJs },
+    { name: "TS", icon: SiTypescript },
+    { name: "REACT & RN", icon: FaReact },
+    { name: "NEXT", icon: RiNextjsFill },
+    { name: "FLUTTER", icon: SiFlutter },
+    { name: "NODE", icon: FaNodeJs },
+    { name: "EXPRESS", icon: SiExpress },
+    { name: "GIT", icon: FaGithub },
+    { name: "MYSQL", icon: DiMysql },
+    { name: "DOCKER", icon: FaDocker },
+    { name: "ADOBE", icon: SiAdobe },
+    { name: "FIGMA", icon: FaFigma },
+  ];
+
+  const HoverSkillButton = ({
+    dataName,
+    icon: Icon,
+  }: {
+    dataName: string;
+    icon: IconType;
+  }) => {
+    return (
+      <motion.button
+        className="bg-orange-500 w-[40px] h-[40px] rounded-full flex items-center justify-center dark:bg-[#88ff69] hoverable2"
+        data-name={dataName}
+        initial={{ opacity: 0, y: "-35%" }}
+        animate={{
+          opacity: secondSlideAnimation ? 1 : 0,
+          y: secondSlideAnimation ? "0%" : "-35%",
+        }}
+        transition={{ duration: 1.6, ease: "easeInOut" }}
+      >
+        <Icon className="w-[25px] h-[25px] text-white dark:text-black" />
+      </motion.button>
+    );
+  };
+
+  const graphSkills = [
+    { skill: "HTML & CSS", percentage: 100 },
+    { skill: "JAVASCRIPT & TYPESCRIPT", percentage: 90 },
+    { skill: "REACT & REACT NATIVE", percentage: 90 },
+    { skill: "NEXT.JS", percentage: 80 },
+    { skill: "DART & FLUTTER", percentage: 60 },
+    { skill: "NODE.JS & EXPRESS", percentage: 70 },
+    { skill: "MYSQL", percentage: 70 },
+    { skill: "GIT", percentage: 90 },
+    { skill: "DESIGN TOOLS (ADOBE & FIGMA)", percentage: 80 },
+  ];
+
+  const GraphSkillsComponent = ({
+    skill,
+    percentage,
+  }: {
+    skill: string;
+    percentage: number;
+  }) => {
+    return (
+      <div>
+        <div className="flex justify-between mt-6">
+          <h3>{skill}</h3>
+          <h3 className="text-sm font-normal">{percentage}</h3>
+        </div>
+        <motion.div
+          className={`h-[5px] bg-orange-500 mt-2 dark:bg-[#88ff69]`}
+          initial={{ width: "0%" }}
+          animate={{
+            width: secondSlideAnimation ? `${percentage}%` : "0%",
+          }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+        />
+      </div>
+    );
+  };
 
   return (
     <AnimatePresence>
@@ -116,30 +207,31 @@ export default function About() {
                   >
                     {locale === "en" ? (
                       <h3 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] leading-[20px] sm:leading-[24px] xl:leading-[34px] overflow-y-auto">
-                        My name is Junbeom Woo and I am 27 years old, and I was
-                        born in South Korea.
-                        <br />I have a bright and outgoing personality and I am
-                        passionate about Web development.
-                        <br />I recently moved to Denmark with a residence
-                        permit under the EU regulations and I am currently
-                        seeking employment in Copenhagen. <br />I am working as
-                        a frontend intern, contributing to both UI/UX design and
-                        mobile frontend development.
+                        I am a frontend developer based in Copenhagen. In
+                        addition to my frontend experience, I bring a strong
+                        technical foundation in backend development as well as
+                        UI/UX skills from my design background.
+                        <br />
+                        This helps me bridge the gap between engineering and
+                        design and build intuitive, scalable solutions.
+                        <br /> I am driven by passion and love tackling new
+                        projects while ensuring my work meets high standards.
+                        <br /> Moreover, I am positive, friendly, and dedicated
+                        to exploring my limits and going beyond them.
                       </h3>
                     ) : (
                       <h3 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] leading-[20px] sm:leading-[24px] xl:leading-[34px] overflow-y-auto">
-                        Mit navn er Junbeom Woo, jeg er 27 år gammel, og jeg er
-                        født i Sydkorea.
-                        <br />
-                        Jeg har en lys og udadvendt personlighed, og jeg brænder
-                        for webudvikling.
-                        <br />
-                        Jeg er for nylig flyttet til Danmark med en
-                        opholdstilladelse under EU-reglerne, og jeg søger i
-                        øjeblikket arbejde i København.
-                        <br />
-                        Jeg arbejder som frontend-praktikant og bidrager til
-                        både UI/UX-design og mobil frontend-udvikling.
+                        Jeg er frontend-udvikler baseret i København. Ud over
+                        min erfaring med frontend bringer jeg også et solidt
+                        teknisk fundament inden for backend-udvikling samt
+                        UI/UX-færdigheder fra min designbaggrund. <br />
+                        Dette hjælper mig med at bygge bro mellem engineering og
+                        design og skabe intuitive, skalerbare løsninger. <br />
+                        Jeg drives af passion og elsker at tage nye projekter
+                        op, samtidig med at jeg sikrer, at mit arbejde lever op
+                        til høje standarder. Derudover er jeg positiv, venlig og
+                        dedikeret til at udforske mine grænser og gå ud over
+                        dem.
                       </h3>
                     )}
                   </motion.div>
@@ -189,91 +281,15 @@ export default function About() {
 
                   {/* graph */}
                   <div className="font-medium text-sm ">
-                    {/* HTML & CSS */}
-                    <div>
-                      <div className="flex justify-between mt-6">
-                        <h3>HTML & CSS</h3>
-                        <h3 className="text-sm font-normal">100</h3>
-                      </div>
-                      <motion.div
-                        className={`h-[5px] bg-orange-500 mt-2 dark:bg-[#88ff69]`}
-                        initial={{ width: "0%" }}
-                        animate={{
-                          width: secondSlideAnimation ? "100%" : "0%",
-                        }}
-                        transition={{ duration: 1.5, ease: "easeInOut" }}
-                      />
-                    </div>
-
-                    {/* JS & TS */}
-                    <div>
-                      <div className="flex justify-between mt-4">
-                        <h3>JAVASCRIPT & TYPESCRIPT</h3>
-                        <h3 className="text-sm font-normal">80</h3>
-                      </div>
-                      <motion.div
-                        className={`h-[5px] bg-orange-500 mt-2 dark:bg-[#88ff69]`}
-                        initial={{ width: "0%" }}
-                        animate={{ width: secondSlideAnimation ? "80%" : "0%" }}
-                        transition={{ duration: 1.5, ease: "easeInOut" }}
-                      />
-                    </div>
-                    {/* React & Next.js */}
-                    <div>
-                      <div className="flex justify-between mt-4">
-                        <h3>REACT(NEXT.JS) & REACT NATIVE</h3>
-                        <h3 className="text-sm font-normal">90</h3>
-                      </div>
-                      <motion.div
-                        className={`h-[5px] bg-orange-500 mt-2 dark:bg-[#88ff69]`}
-                        initial={{ width: "0%" }}
-                        animate={{ width: secondSlideAnimation ? "90%" : "0%" }}
-                        transition={{ duration: 1.5, ease: "easeInOut" }}
-                      />
-                    </div>
-
-                    {/* Node.js & EXPRESS */}
-                    <div>
-                      <div className="flex justify-between mt-4">
-                        <h3>NODE.JS & EXPRESS</h3>
-                        <h3 className="text-sm font-normal">70</h3>
-                      </div>
-                      <motion.div
-                        className={`h-[5px] bg-orange-500 mt-2 dark:bg-[#88ff69]`}
-                        initial={{ width: "0%" }}
-                        animate={{ width: secondSlideAnimation ? "70%" : "0%" }}
-                        transition={{ duration: 1.5, ease: "easeInOut" }}
-                      />
-                    </div>
-
-                    {/* MySQL*/}
-                    <div>
-                      <div className="flex justify-between mt-4">
-                        <h3>MYSQL</h3>
-                        <h3 className="text-sm font-normal">70</h3>
-                      </div>
-                      <motion.div
-                        className={`h-[5px] bg-orange-500 mt-2 dark:bg-[#88ff69]`}
-                        initial={{ width: "0%" }}
-                        animate={{ width: secondSlideAnimation ? "70%" : "0%" }}
-                        transition={{ duration: 1.5, ease: "easeInOut" }}
-                      />
-                    </div>
-
-                    {/* ADOBE ILLUSTRATOR & PHOTOSHOP*/}
-                    <div>
-                      <div className="flex justify-between mt-4">
-                        <h3>DESIGN TOOLS (ADOBE AI / PS & FIGMA)</h3>
-                        <h3 className="text-sm font-normal">80</h3>
-                      </div>
-                      <motion.div
-                        className={`h-[5px] bg-orange-500 mt-2 dark:bg-[#88ff69]`}
-                        initial={{ width: "0%" }}
-                        animate={{ width: secondSlideAnimation ? "80%" : "0%" }}
-                        transition={{ duration: 1.5, ease: "easeInOut" }}
-                      />
-                    </div>
-
+                    {graphSkills.map((v, i) => {
+                      return (
+                        <GraphSkillsComponent
+                          key={i}
+                          skill={v.skill}
+                          percentage={v.percentage}
+                        />
+                      );
+                    })}
                     {/* hover me! */}
                     <div className="mt-10 hidden sm:block">
                       {" "}
@@ -293,173 +309,15 @@ export default function About() {
 
                   {/* skills icon */}
                   <div className="mt-4 gap-4 flex-wrap hidden sm:flex  opacity-60">
-                    {/* html */}
-                    <motion.button
-                      className="bg-orange-500 w-[40px] h-[40px] rounded-full flex items-center justify-center dark:bg-[#88ff69] hoverable2"
-                      data-name="HTML"
-                      initial={{ opacity: 0, y: "-35%" }}
-                      animate={{
-                        opacity: secondSlideAnimation ? 1 : 0,
-                        y: secondSlideAnimation ? "0%" : "-35%",
-                      }}
-                      transition={{ duration: 0.6, ease: "easeInOut" }}
-                    >
-                      <FaHtml5 className="w-[25px] h-[25px] text-white dark:text-black" />
-                    </motion.button>
-
-                    {/* css */}
-                    <motion.button
-                      className="bg-orange-500 w-[40px] h-[40px] rounded-full flex items-center justify-center dark:bg-[#88ff69] hoverable2"
-                      data-name="CSS"
-                      initial={{ opacity: 0, y: "-35%" }}
-                      animate={{
-                        opacity: secondSlideAnimation ? 1 : 0,
-                        y: secondSlideAnimation ? "0%" : "-35%",
-                      }}
-                      transition={{ duration: 0.8, ease: "easeInOut" }}
-                    >
-                      <FaCss3Alt className="w-[25px] h-[25px] text-white dark:text-black" />
-                    </motion.button>
-
-                    {/* TailwindCss */}
-                    <motion.button
-                      className="bg-orange-500 w-[40px] h-[40px] rounded-full flex items-center justify-center dark:bg-[#88ff69] hoverable2"
-                      data-name="TAILWIND"
-                      initial={{ opacity: 0, y: "-35%" }}
-                      animate={{
-                        opacity: secondSlideAnimation ? 1 : 0,
-                        y: secondSlideAnimation ? "0%" : "-35%",
-                      }}
-                      transition={{ duration: 1, ease: "easeInOut" }}
-                    >
-                      <RiTailwindCssFill className="w-[25px] h-[25px] text-white dark:text-black" />
-                    </motion.button>
-
-                    {/* JS */}
-                    <motion.button
-                      className="bg-orange-500 w-[40px] h-[40px] rounded-full flex items-center justify-center dark:bg-[#88ff69] hoverable2"
-                      data-name="JS"
-                      initial={{ opacity: 0, y: "-35%" }}
-                      animate={{
-                        opacity: secondSlideAnimation ? 1 : 0,
-                        y: secondSlideAnimation ? "0%" : "-35%",
-                      }}
-                      transition={{ duration: 1.2, ease: "easeInOut" }}
-                    >
-                      <FaJs className="w-[20px] h-[20px] text-white dark:text-black" />
-                    </motion.button>
-
-                    {/* TS */}
-                    <motion.button
-                      className="bg-orange-500 w-[40px] h-[40px] rounded-full flex items-center justify-center dark:bg-[#88ff69] hoverable2"
-                      data-name="TS"
-                      initial={{ opacity: 0, y: "-35%" }}
-                      animate={{
-                        opacity: secondSlideAnimation ? 1 : 0,
-                        y: secondSlideAnimation ? "0%" : "-35%",
-                      }}
-                      transition={{ duration: 1.4, ease: "easeInOut" }}
-                    >
-                      <SiTypescript className="w-[20px] h-[20px] text-white dark:text-black" />
-                    </motion.button>
-
-                    {/* React & Rn */}
-                    <motion.button
-                      className="bg-orange-500 w-[40px] h-[40px] rounded-full flex items-center justify-center dark:bg-[#88ff69] hoverable2"
-                      data-name="REACT & RN"
-                      initial={{ opacity: 0, y: "-35%" }}
-                      animate={{
-                        opacity: secondSlideAnimation ? 1 : 0,
-                        y: secondSlideAnimation ? "0%" : "-35%",
-                      }}
-                      transition={{ duration: 1.6, ease: "easeInOut" }}
-                    >
-                      <FaReact className="w-[25px] h-[25px] text-white dark:text-black" />
-                    </motion.button>
-
-                    {/* Next.js */}
-                    <motion.button
-                      className="bg-orange-500 w-[40px] h-[40px] rounded-full flex items-center justify-center dark:bg-[#88ff69] hoverable2"
-                      data-name="NEXT"
-                      initial={{ opacity: 0, y: "-35%" }}
-                      animate={{
-                        opacity: secondSlideAnimation ? 1 : 0,
-                        y: secondSlideAnimation ? "0%" : "-35%",
-                      }}
-                      transition={{ duration: 1.8, ease: "easeInOut" }}
-                    >
-                      <RiNextjsFill className="w-[25px] h-[25px] text-white dark:text-black" />
-                    </motion.button>
-
-                    {/* Node.js */}
-                    <motion.button
-                      className="bg-orange-500 w-[40px] h-[40px] rounded-full flex items-center justify-center dark:bg-[#88ff69] hoverable2"
-                      data-name="NODE"
-                      initial={{ opacity: 0, y: "-35%" }}
-                      animate={{
-                        opacity: secondSlideAnimation ? 1 : 0,
-                        y: secondSlideAnimation ? "0%" : "-35%",
-                      }}
-                      transition={{ duration: 2, ease: "easeInOut" }}
-                    >
-                      <FaNodeJs className="w-[25px] h-[25px] text-white dark:text-black" />
-                    </motion.button>
-
-                    {/* Express */}
-                    <motion.button
-                      className="bg-orange-500 w-[40px] h-[40px] rounded-full flex items-center justify-center dark:bg-[#88ff69] hoverable2"
-                      data-name="EXPRESS"
-                      initial={{ opacity: 0, y: "-35%" }}
-                      animate={{
-                        opacity: secondSlideAnimation ? 1 : 0,
-                        y: secondSlideAnimation ? "0%" : "-35%",
-                      }}
-                      transition={{ duration: 2.2, ease: "easeInOut" }}
-                    >
-                      <SiExpress className="w-[25px] h-[25px] text-white dark:text-black" />
-                    </motion.button>
-
-                    {/* MySQL */}
-                    <motion.button
-                      className="bg-orange-500 w-[40px] h-[40px] rounded-full flex items-center justify-center dark:bg-[#88ff69] hoverable2"
-                      data-name="MYSQL"
-                      initial={{ opacity: 0, y: "-35%" }}
-                      animate={{
-                        opacity: secondSlideAnimation ? 1 : 0,
-                        y: secondSlideAnimation ? "0%" : "-35%",
-                      }}
-                      transition={{ duration: 2.4, ease: "easeInOut" }}
-                    >
-                      <DiMysql className="w-[25px] h-[25px] text-white dark:text-black" />
-                    </motion.button>
-
-                    {/* AI & PS */}
-                    <motion.button
-                      className="bg-orange-500 w-[40px] h-[40px] rounded-full flex items-center justify-center dark:bg-[#88ff69] hoverable2"
-                      data-name="ADOBE AI & PS"
-                      initial={{ opacity: 0, y: "-35%" }}
-                      animate={{
-                        opacity: secondSlideAnimation ? 1 : 0,
-                        y: secondSlideAnimation ? "0%" : "-35%",
-                      }}
-                      transition={{ duration: 2.6, ease: "easeInOut" }}
-                    >
-                      <SiAdobe className="w-[20px] h-[20px] text-white dark:text-black" />
-                    </motion.button>
-
-                    {/* Figma */}
-                    <motion.button
-                      className="bg-orange-500 w-[40px] h-[40px] rounded-full flex items-center justify-center dark:bg-[#88ff69] hoverable2"
-                      data-name="FIGMA"
-                      initial={{ opacity: 0, y: "-35%" }}
-                      animate={{
-                        opacity: secondSlideAnimation ? 1 : 0,
-                        y: secondSlideAnimation ? "0%" : "-35%",
-                      }}
-                      transition={{ duration: 2.8, ease: "easeInOut" }}
-                    >
-                      <FaFigma className="w-[20px] h-[20px] text-white dark:text-black" />
-                    </motion.button>
+                    {hoverSkills.map((v, i) => {
+                      return (
+                        <HoverSkillButton
+                          key={i}
+                          dataName={v.name}
+                          icon={v.icon}
+                        />
+                      );
+                    })}
                   </div>
 
                   <motion.h1
@@ -478,7 +336,7 @@ export default function About() {
             </div>
           </SwiperSlide>
 
-          {/* Third: Education */}
+          {/* Third: Experience */}
           <SwiperSlide className="w-full h-screen">
             <div className="flex items-center justify-center h-screen">
               <div className="w-full h-auto block xl:flex px-6 md:px-10 lg:px-40 justify-center items-center">
@@ -490,7 +348,7 @@ export default function About() {
                     </h2>
                     {thirdSlideAnimation && (
                       <h1 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] text-orange-500 dark:text-[#88ff69] font-monaco font-medium mt-10">
-                        <ShuffleText content={h("education")} />( ) {"{"}
+                        <ShuffleText content={h("experience")} />( ) {"{"}
                       </h1>
                     )}
                   </div>
@@ -499,6 +357,159 @@ export default function About() {
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: thirdSlideAnimation ? 1 : 0 }}
+                    transition={{ duration: 1, ease: "linear" }}
+                    className="py-6 xl:py-10 xl:max-w-[900px]"
+                  >
+                    {/* first experience */}
+                    <div>
+                      <h1 className="text-[14px] sm:text-[17px] md:text-[20px] xl:text-[22px] font-medium leading-[18px]">
+                        {locale === "en"
+                          ? "Spuddle, Denmark"
+                          : "Spuddle, Danmark"}
+                      </h1>
+                      <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-4 xl:mt-5  text-[#888888] dark:text-[#b4b4b4]">
+                        {locale === "en"
+                          ? "Frontend Developer"
+                          : "Frontend-udvikler"}
+                      </h2>
+                      {/* courses */}
+                      <div>
+                        <div className="text-[9.5px] sm:text-[11px] md:text-[14px] xl:text-[16px] mt-4 xl:mt-5 ml-4">
+                          {locale === "en" ? (
+                            <div className="flex flex-wrap gap-3 font-light">
+                              <h4>
+                                · Promoted to Developer from Intern following a
+                                successful internship
+                              </h4>
+                              <h4>
+                                · Build mobile features using React Native and
+                                TypeScript in a cross-functional team
+                              </h4>
+                              <h4>
+                                · Develop reusable components and custom hooks
+                                to improve code maintainability
+                              </h4>
+                              <h4>
+                                · Design data structure and TypeScript
+                                interfaces to accelerate development independent
+                                of the backend
+                              </h4>
+                            </div>
+                          ) : (
+                            <div className="flex flex-wrap gap-3 font-light">
+                              <h4>
+                                · Forfremmet fra praktikant til udvikler efter
+                                et succesfuldt praktikophold
+                              </h4>
+                              <h4>
+                                · Udvikler mobilfunktioner ved hjælp af React
+                                Native og TypeScript i et tværfagligt team
+                              </h4>
+                              <h4>
+                                · Udvikler genanvendelige komponenter og custom
+                                hooks for at forbedre kodevedligeholdelse
+                              </h4>
+                              <h4>
+                                · Designer datastruktur og TypeScript-interface
+                                for at accelerere udvikling uafhængigt af
+                                backend
+                              </h4>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* second experience */}
+                    <div className="mt-14">
+                      <h1 className="text-[14px] sm:text-[17px] md:text-[20px] xl:text-[22px]  font-medium leading-[18px]">
+                        {locale === "en"
+                          ? "Inværse Social ApS, Denmark"
+                          : "Inværse Social ApS, Danmark"}
+                      </h1>
+                      <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-4 xl:mt-5 text-[#888888] dark:text-[#b4b4b4]">
+                        {locale === "en"
+                          ? "Frontend Developer Intern"
+                          : "Frontend Udvikler Praktikant "}
+                      </h2>
+                      {/* courses */}
+                      <div>
+                        <div className="text-[9.5px] sm:text-[11px] md:text-[14px] xl:text-[16px] mt-4 xl:mt-5 ml-4">
+                          {locale === "en" ? (
+                            <div className="flex flex-wrap gap-3  font-light">
+                              <h4>
+                                · Led the initial app migration to Flutter,
+                                architecting the system from the ground up
+                              </h4>
+                              <h4>
+                                · Designed the mobile UI and built core
+                                application features
+                              </h4>
+                              <h4>
+                                · Integrated backend APIs and collaborated with
+                                a backend developer to deliver production-ready
+                                features
+                              </h4>
+                            </div>
+                          ) : (
+                            <div className="flex flex-wrap gap-3  font-light">
+                              <h4>
+                                · Ledede den indledende app-migration til
+                                Flutter og arkitekturerede systemet fra bunden
+                              </h4>
+                              <h4>
+                                · Designede mobil-UI og udviklede
+                                kernefunktioner i applikationen
+                              </h4>
+                              <h4>
+                                · Integrerede backend-API’er og samarbejdede med
+                                en backend-udvikler for at levere
+                                produktionsklare funktioner
+                              </h4>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  <motion.h1
+                    className="text-[20px] sm:text-[28px] md:text-[30px] text-orange-500 dark:text-[#88ff69] font-monaco font-bold xl:text-[40px]"
+                    initial={{ opacity: 0, y: "-35%" }}
+                    animate={{
+                      opacity: thirdSlideAnimation ? 1 : 0,
+                      y: thirdSlideAnimation ? "0%" : "-35%",
+                    }}
+                    transition={{ duration: 0.5, ease: "linear" }}
+                  >
+                    {"}"}
+                  </motion.h1>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          {/* Forth: Education */}
+          <SwiperSlide className="w-full h-screen">
+            <div className="flex items-center justify-center h-screen">
+              <div className="w-full h-auto block xl:flex px-6 md:px-10 lg:px-40 justify-center items-center">
+                <div>
+                  {/* title */}
+                  <div className="flex items-end">
+                    <h2 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] mr-4 text-[#8c1490] font-monaco font-medium ">
+                      function
+                    </h2>
+                    {forthSlideAnimation && (
+                      <h1 className="text-[20px] sm:text-[28px] md:text-[30px] xl:text-[40px] text-orange-500 dark:text-[#88ff69] font-monaco font-medium mt-10">
+                        <ShuffleText content={h("education")} />( ) {"{"}
+                      </h1>
+                    )}
+                  </div>
+
+                  {/* content */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: forthSlideAnimation ? 1 : 0 }}
                     transition={{ duration: 1, ease: "linear" }}
                     className="py-6 xl:py-10 xl:max-w-[900px]"
                   >
@@ -589,8 +600,8 @@ export default function About() {
                     className="text-[20px] sm:text-[28px] md:text-[30px] text-orange-500 dark:text-[#88ff69] font-monaco font-bold xl:text-[40px]"
                     initial={{ opacity: 0, y: "-35%" }}
                     animate={{
-                      opacity: thirdSlideAnimation ? 1 : 0,
-                      y: thirdSlideAnimation ? "0%" : "-35%",
+                      opacity: forthSlideAnimation ? 1 : 0,
+                      y: forthSlideAnimation ? "0%" : "-35%",
                     }}
                     transition={{ duration: 0.5, ease: "linear" }}
                   >
