@@ -367,19 +367,21 @@ export default function About() {
                           ? "Spuddle, Denmark"
                           : "Spuddle, Danmark"}
                       </h1>
+                      <div className="flex justify-between">
                       <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-4 xl:mt-5  text-[#888888] dark:text-[#b4b4b4]">
                         {locale === "en"
                           ? "Frontend Developer"
                           : "Frontend-udvikler"}
                       </h2>
+                       <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-4 xl:mt-5  text-[#888888] dark:text-[#b4b4b4]">{locale === "en" ? "December 2025 - Present" : "December 2025 - Nu"}</h2>
+                      </div>
                       {/* courses */}
                       <div>
                         <div className="text-[9.5px] sm:text-[11px] md:text-[14px] xl:text-[16px] mt-4 xl:mt-5 ml-4">
                           {locale === "en" ? (
                             <div className="flex flex-wrap gap-3 font-light">
                               <h4>
-                                · Promoted to Developer from Intern following a
-                                successful internship
+                                · Implemented API integration and state management with seamless client-server sync
                               </h4>
                               <h4>
                                 · Build mobile features using React Native and
@@ -398,8 +400,7 @@ export default function About() {
                           ) : (
                             <div className="flex flex-wrap gap-3 font-light">
                               <h4>
-                                · Forfremmet fra praktikant til udvikler efter
-                                et succesfuldt praktikophold
+                                · Implementerede API-integration og state management med problemfri klient-server-synkronisering
                               </h4>
                               <h4>
                                 · Udvikler mobilfunktioner ved hjælp af React
@@ -427,11 +428,14 @@ export default function About() {
                           ? "Inværse Social ApS, Denmark"
                           : "Inværse Social ApS, Danmark"}
                       </h1>
+                      <div className="flex justify-between">
                       <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-4 xl:mt-5 text-[#888888] dark:text-[#b4b4b4]">
                         {locale === "en"
                           ? "Frontend Developer Intern"
                           : "Frontend Udvikler Praktikant "}
                       </h2>
+                      <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-4 xl:mt-5  text-[#888888] dark:text-[#b4b4b4]">{locale === "en" ? "September 2025 - November 2025" : "September 2025 - November 2025"}</h2>
+                      </div>
                       {/* courses */}
                       <div>
                         <div className="text-[9.5px] sm:text-[11px] md:text-[14px] xl:text-[16px] mt-4 xl:mt-5 ml-4">
