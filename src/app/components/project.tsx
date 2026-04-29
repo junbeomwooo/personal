@@ -413,7 +413,7 @@ export default function Project() {
                     height={2000}
                     onClick={() =>
                       router.push(
-                        "http://ec2-18-153-11-213.eu-central-1.compute.amazonaws.com:3001/"
+                        "https://unico-portfolio.duckdns.org/"
                       )
                     }
                   />
@@ -534,7 +534,7 @@ export default function Project() {
                       animate={{ scale: title === "UNICO" ? 1 : 0 }}
                       transition={{ duration: 0.5, ease: "easeInOut" }}
                     >
-                      AWS
+                      OCI
                     </motion.h1>
                     <motion.h1
                       className="px-1 sm:px-3 py-0.5 sm:py-1 bg-orange-500 dark:bg-green-600 text-[10px] sm:text-sm rounded-lg text-white font-semibold"
@@ -551,7 +551,7 @@ export default function Project() {
                       className="bg-none w-1/2 py-3 text-orange-500 font-medium border-2 border-solid border-orange-500 hover:no-underline hoverable hover:bg-orange-500 hover:text-white hover:dark:text-white dark:border-green-500 dark:text-green-500 hover:dark:bg-green-500 text-[13px] sm:text-base"
                       onClick={() =>
                         router.push(
-                          "http://ec2-18-153-11-213.eu-central-1.compute.amazonaws.com:3001/"
+                          "https://unico-portfolio.duckdns.org/"
                         )
                       }
                       initial={{ scale: 0 }}
