@@ -97,20 +97,20 @@ export default function SecondBackground() {
             transition={{ duration: 2, ease: "easeInOut" }}
           >
             <h1 className="text-[35px] font-thin">
-              Focused on <strong>Front-End Development</strong>
+              Working as a <strong>Full Stack Developer</strong>
             </h1>
             <h1 className="text-[35px] font-thin mt-6">
-              aspiring to grow into a <strong>Full Stack Developer</strong>
+              across <strong>Front-End and Back-End</strong>
             </h1>
           </motion.div>
         ) : (
           <div className="mt-48 opacity-0">
             {" "}
             <h1 className="text-[35px] font-thin">
-              Focused on <strong>Front-End Development</strong>
+              Working as a <strong>Full Stack Developer</strong>
             </h1>
             <h1 className="text-[35px] font-thin mt-6">
-              aspiring to grow into a <strong>Full Stack Developer</strong>
+              across <strong>Front-End and Back-End</strong>
             </h1>
           </div>
         )}

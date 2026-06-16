@@ -950,7 +950,7 @@ function ScreenResume({ invert, text, fontSize, x = 0, y = 1.2, ...props }) {
             ? "black"
             : "#35c19f"
         }
-        onClick={() => window.open("/resume.pdf", "_blank")}
+        onClick={() => window.open("/CV.pdf", "_blank")}
         onPointerOver={() => setIsHovering(true)}
         onPointerOut={() => setIsHovering(false)}
       >

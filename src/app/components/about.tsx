@@ -117,8 +117,8 @@ export default function About() {
     { skill: "REACT & REACT NATIVE", percentage: 90 },
     { skill: "NEXT.JS", percentage: 80 },
     { skill: "DART & FLUTTER", percentage: 60 },
-    { skill: "NODE.JS & EXPRESS", percentage: 70 },
-    { skill: "MYSQL", percentage: 70 },
+    { skill: "NODE.JS", percentage: 80 },
+    { skill: "SQL", percentage: 80 },
     { skill: "GIT", percentage: 90 },
     { skill: "DESIGN TOOLS (ADOBE & FIGMA)", percentage: 80 },
   ];
@@ -207,13 +207,12 @@ export default function About() {
                   >
                     {locale === "en" ? (
                       <h3 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] leading-[20px] sm:leading-[24px] xl:leading-[34px] overflow-y-auto">
-                        I am a frontend developer based in Copenhagen. In
-                        addition to my frontend experience, I bring a strong
-                        technical foundation in backend development as well as
-                        UI/UX skills from my design background.
-                        <br />
-                        This helps me bridge the gap between engineering and
-                        design and build intuitive, scalable solutions.
+                        I am a full-stack developer based in Copenhagen. I
+                        bring a strong technical foundation across frontend and
+                        backend, along with UI/UX skills from my design
+                        background. This helps me bridge the gap between
+                        engineering and design and build intuitive, scalable
+                        solutions.
                         <br /> I am driven by passion and love tackling new
                         projects while ensuring my work meets high standards.
                         <br /> Moreover, I am positive, friendly, and dedicated
@@ -221,17 +220,16 @@ export default function About() {
                       </h3>
                     ) : (
                       <h3 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] leading-[20px] sm:leading-[24px] xl:leading-[34px] overflow-y-auto">
-                        Jeg er frontend-udvikler baseret i København. Ud over
-                        min erfaring med frontend bringer jeg også et solidt
-                        teknisk fundament inden for backend-udvikling samt
-                        UI/UX-færdigheder fra min designbaggrund. <br />
+                        Jeg er full-stack-udvikler baseret i København. Jeg
+                        bringer et solidt teknisk fundament på tværs af frontend
+                        og backend samt UI/UX-færdigheder fra min designbaggrund.
                         Dette hjælper mig med at bygge bro mellem engineering og
                         design og skabe intuitive, skalerbare løsninger. <br />
                         Jeg drives af passion og elsker at tage nye projekter
                         op, samtidig med at jeg sikrer, at mit arbejde lever op
-                        til høje standarder. Derudover er jeg positiv, venlig og
-                        dedikeret til at udforske mine grænser og gå ud over
-                        dem.
+                        til høje standarder. <br /> Derudover er jeg positiv,
+                        venlig og dedikeret til at udforske mine grænser og gå
+                        ud over dem.
                       </h3>
                     )}
                   </motion.div>
@@ -370,10 +368,10 @@ export default function About() {
                       <div className="flex justify-between">
                       <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-4 xl:mt-5  text-[#888888] dark:text-[#b4b4b4]">
                         {locale === "en"
-                          ? "Frontend Developer"
-                          : "Frontend-udvikler"}
+                          ? "Full-Stack Developer"
+                          : "Full-Stack-udvikler"}
                       </h2>
-                       <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-4 xl:mt-5  text-[#888888] dark:text-[#b4b4b4]">{locale === "en" ? "December 2025 - Present" : "December 2025 - Nu"}</h2>
+                       <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-4 xl:mt-5  text-[#888888] dark:text-[#b4b4b4]">{locale === "en" ? "March 2026 - Present" : "Marts 2026 - Nu"}</h2>
                       </div>
                       {/* courses */}
                       <div>
@@ -381,39 +379,47 @@ export default function About() {
                           {locale === "en" ? (
                             <div className="flex flex-wrap gap-3 font-light">
                               <h4>
-                                · Implemented API integration and state management with seamless client-server sync
+                                · Own features end-to-end across React Native
+                                and Hono/PostgreSQL
                               </h4>
                               <h4>
-                                · Build mobile features using React Native and
-                                TypeScript in a cross-functional team
+                                · Build multiple interactive question types
+                                across UI and backend schema
                               </h4>
                               <h4>
-                                · Develop reusable components and custom hooks
-                                to improve code maintainability
+                                · Build REST APIs and type-safe schemas, keeping
+                                frontend and backend in sync
                               </h4>
                               <h4>
-                                · Design data structure and TypeScript
-                                interfaces to accelerate development independent
-                                of the backend
+                                · Configure staging and TestFlight deployment
+                                for the mobile app
+                              </h4>
+                              <h4>
+                                · Migrate the mobile test suite to Jest,
+                                establishing testing setup for shared logic
                               </h4>
                             </div>
                           ) : (
                             <div className="flex flex-wrap gap-3 font-light">
                               <h4>
-                                · Implementerede API-integration og state management med problemfri klient-server-synkronisering
+                                · Ejer features end-to-end på tværs af React
+                                Native og Hono/PostgreSQL
                               </h4>
                               <h4>
-                                · Udvikler mobilfunktioner ved hjælp af React
-                                Native og TypeScript i et tværfagligt team
+                                · Bygger flere interaktive spørgsmålstyper på
+                                tværs af UI og backend-skema
                               </h4>
                               <h4>
-                                · Udvikler genanvendelige komponenter og custom
-                                hooks for at forbedre kodevedligeholdelse
+                                · Bygger REST API’er og type-sikre skemaer og
+                                holder frontend og backend synkroniseret
                               </h4>
                               <h4>
-                                · Designer datastruktur og TypeScript-interface
-                                for at accelerere udvikling uafhængigt af
-                                backend
+                                · Konfigurerer staging- og TestFlight-deployment
+                                til mobilappen
+                              </h4>
+                              <h4>
+                                · Migrerede mobil-testsuiten til Jest og
+                                etablerede testopsætning for delt logik
                               </h4>
                             </div>
                           )}
@@ -422,6 +428,46 @@ export default function About() {
                     </div>
 
                     {/* second experience */}
+                    <div className="mt-2">
+                      <div className="flex justify-between">
+                      <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-4 xl:mt-5  text-[#888888] dark:text-[#b4b4b4]">
+                        {locale === "en"
+                          ? "Frontend Developer Intern"
+                          : "Frontend-udvikler Praktikant"}
+                      </h2>
+                       <h2 className="text-[11px] sm:text-[13px] md:text-[16px] xl:text-[18px] mt-4 xl:mt-5  text-[#888888] dark:text-[#b4b4b4]">{locale === "en" ? "December 2025 - March 2026" : "December 2025 - Marts 2026"}</h2>
+                      </div>
+                      {/* courses */}
+                      <div>
+                        <div className="text-[9.5px] sm:text-[11px] md:text-[14px] xl:text-[16px] mt-4 xl:mt-5 ml-4">
+                          {locale === "en" ? (
+                            <div className="flex flex-wrap gap-3 font-light">
+                              <h4>
+                                · Developed reusable components and custom hooks
+                                for maintainable code
+                              </h4>
+                              <h4>
+                                · Built core app UI and screens with React
+                                Native and TypeScript
+                              </h4>
+                            </div>
+                          ) : (
+                            <div className="flex flex-wrap gap-3 font-light">
+                              <h4>
+                                · Udviklede genanvendelige komponenter og custom
+                                hooks for vedligeholdelig kode
+                              </h4>
+                              <h4>
+                                · Byggede app-UI og skærme med React Native og
+                                TypeScript
+                              </h4>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* third experience */}
                     <div className="mt-14">
                       <h1 className="text-[14px] sm:text-[17px] md:text-[20px] xl:text-[22px]  font-medium leading-[18px]">
                         {locale === "en"
@@ -449,11 +495,6 @@ export default function About() {
                                 · Designed the mobile UI and built core
                                 application features
                               </h4>
-                              <h4>
-                                · Integrated backend APIs and collaborated with
-                                a backend developer to deliver production-ready
-                                features
-                              </h4>
                             </div>
                           ) : (
                             <div className="flex flex-wrap gap-3  font-light">
@@ -464,11 +505,6 @@ export default function About() {
                               <h4>
                                 · Designede mobil-UI og udviklede
                                 kernefunktioner i applikationen
-                              </h4>
-                              <h4>
-                                · Integrerede backend-API’er og samarbejdede med
-                                en backend-udvikler for at levere
-                                produktionsklare funktioner
                               </h4>
                             </div>
                           )}
